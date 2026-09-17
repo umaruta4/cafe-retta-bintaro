@@ -176,6 +176,9 @@ h2{font-size:clamp(52px,6vw,86px)}
   background-size:110px 110px,150px 150px,auto;
   box-shadow:var(--shadow)
 }
+.map-card{display:block;cursor:pointer}
+.map-card:focus-visible{outline:3px solid var(--rust);outline-offset:6px}
+.map-card:hover .map-label strong{text-decoration:underline}
 .map-card::before,.map-card::after{
   content:"";position:absolute;background:#efe9d7;border-radius:100px;transform:rotate(-20deg)
 }
@@ -459,14 +462,15 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
           </div>
         </div>
 
-        <div class="map-card reveal">
+        <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Cafe+Retta+Bintaro+Ruko+Regia+Boulevard" target="_blank" rel="noopener noreferrer" aria-label="Buka lokasi Cafe Retta Bintaro di Google Maps (tab baru)">
           <div class="map-lines"></div>
-          <span class="map-pin">R</span>
+          <span class="map-pin" aria-hidden="true">R</span>
           <div class="map-label">
             <strong>Cafe Retta Bintaro</strong>
             <small>Graha Raya · Tangerang Selatan</small>
+            <small style="display:block;margin-top:6px;font-weight:700;color:var(--forest)">Buka di Google Maps ↗</small>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
