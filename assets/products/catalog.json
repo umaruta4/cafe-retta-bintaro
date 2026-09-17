@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "category": "Minuman",
+    "label": "Minuman berry dalam botol",
+    "src": "assets/products/product-01.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 2,
+    "category": "Minuman",
+    "label": "Minuman cokelat dalam botol",
+    "src": "assets/products/product-02.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 3,
+    "category": "Minuman",
+    "label": "Matcha latte dalam botol",
+    "src": "assets/products/product-03.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 4,
+    "category": "Minuman",
+    "label": "Spanish latte dalam botol",
+    "src": "assets/products/product-04.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 5,
+    "category": "Minuman",
+    "label": "Minuman kopi dalam botol",
+    "src": "assets/products/product-05.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 14,
+    "category": "Minuman",
+    "label": "Es kopi susu",
+    "src": "assets/products/product-14.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 15,
+    "category": "Minuman",
+    "label": "Minuman kopi berlapis hijau",
+    "src": "assets/products/product-15.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 16,
+    "category": "Minuman",
+    "label": "Kopi susu berlapis",
+    "src": "assets/products/product-16.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 18,
+    "category": "Minuman",
+    "label": "Caramel Latte",
+    "src": "assets/products/product-18.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 19,
+    "category": "Minuman",
+    "label": "Hazelnut Latte",
+    "src": "assets/products/product-19.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 21,
+    "category": "Minuman",
+    "label": "Vanilla Latte",
+    "src": "assets/products/product-21.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 23,
+    "category": "Minuman",
+    "label": "Kopi dengan citrus",
+    "src": "assets/products/product-23.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 26,
+    "category": "Minuman",
+    "label": "Minuman cokelat dingin",
+    "src": "assets/products/product-26.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 28,
+    "category": "Minuman",
+    "label": "Minuman susu berwarna merah muda",
+    "src": "assets/products/product-28.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 31,
+    "category": "Minuman",
+    "label": "Minuman hijau dengan jeruk nipis",
+    "src": "assets/products/product-31.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 32,
+    "category": "Minuman",
+    "label": "Minuman citrus dingin",
+    "src": "assets/products/product-32.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 33,
+    "category": "Minuman",
+    "label": "Teh dengan buah",
+    "src": "assets/products/product-33.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 34,
+    "category": "Minuman",
+    "label": "Teh dingin",
+    "src": "assets/products/product-34.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 37,
+    "category": "Minuman",
+    "label": "Sajian kopi panas",
+    "src": "assets/products/product-37.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 38,
+    "category": "Minuman",
+    "label": "Manual brew",
+    "src": "assets/products/product-38.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 39,
+    "category": "Minuman",
+    "label": "Es kopi susu dalam gelas",
+    "src": "assets/products/product-39.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 40,
+    "category": "Minuman",
+    "label": "Kopi hitam panas",
+    "src": "assets/products/product-40.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 41,
+    "category": "Minuman",
+    "label": "Espresso dengan es",
+    "src": "assets/products/product-41.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 42,
+    "category": "Minuman",
+    "label": "Kopi susu panas",
+    "src": "assets/products/product-42.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 44,
+    "category": "Minuman",
+    "label": "Seduhan kopi",
+    "src": "assets/products/product-44.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 47,
+    "category": "Minuman",
+    "label": "Kopi susu dingin",
+    "src": "assets/products/product-47.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 48,
+    "category": "Minuman",
+    "label": "Es krim dan espresso",
+    "src": "assets/products/product-48.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 49,
+    "category": "Minuman",
+    "label": "Susu dan espresso",
+    "src": "assets/products/product-49.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 64,
+    "category": "Minuman",
+    "label": "Kopi dengan lapisan krim",
+    "src": "assets/products/product-64.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 78,
+    "category": "Minuman",
+    "label": "Minuman kopi dingin",
+    "src": "assets/products/product-78.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 6,
+    "category": "Makanan",
+    "label": "Roti panggang",
+    "src": "assets/products/product-06.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 7,
+    "category": "Makanan",
+    "label": "Roti dengan taburan keju",
+    "src": "assets/products/product-07.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 8,
+    "category": "Makanan",
+    "label": "Roti panggang isi",
+    "src": "assets/products/product-08.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 9,
+    "category": "Makanan",
+    "label": "Camilan goreng",
+    "src": "assets/products/product-09.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 10,
+    "category": "Makanan",
+    "label": "Kentang dan camilan",
+    "src": "assets/products/product-10.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 12,
+    "category": "Makanan",
+    "label": "Roti panggang cokelat",
+    "src": "assets/products/product-12.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 30,
+    "category": "Makanan",
+    "label": "Nasi dan lauk",
+    "src": "assets/products/product-30.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 85,
+    "category": "Makanan",
+    "label": "Kentang goreng",
+    "src": "assets/products/product-85.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 24,
+    "category": "Pastry & Dessert",
+    "label": "Croissant",
+    "src": "assets/products/product-24.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 25,
+    "category": "Pastry & Dessert",
+    "label": "Pastry cokelat",
+    "src": "assets/products/product-25.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 65,
+    "category": "Pastry & Dessert",
+    "label": "Pancake dengan saus berry",
+    "src": "assets/products/product-65.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 67,
+    "category": "Pastry & Dessert",
+    "label": "Pancake cokelat",
+    "src": "assets/products/product-67.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 69,
+    "category": "Pastry & Dessert",
+    "label": "Pancake dengan taburan cokelat",
+    "src": "assets/products/product-69.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 71,
+    "category": "Pastry & Dessert",
+    "label": "Pancake dengan sirup",
+    "src": "assets/products/product-71.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 73,
+    "category": "Pastry & Dessert",
+    "label": "Pancake dengan butter",
+    "src": "assets/products/product-73.webp",
+    "width": 500,
+    "height": 500
+  }
+]

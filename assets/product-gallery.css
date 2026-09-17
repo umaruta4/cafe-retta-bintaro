@@ -1,0 +1,68 @@
+/* Scoped additions: retain Retta's cream, forest and rust palette. */
+.brand .brand-mark{object-fit:contain;background:white;flex-shrink:0;border:0}
+#menu,#official-menu{scroll-margin-top:100px}
+.product-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.product-filters button,.viewer button{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:100px;background:var(--paper);color:var(--forest);padding:10px 16px;min-height:44px}
+.product-filters button[aria-pressed="true"]{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+.gallery-note{font-size:12px;color:#616458;max-width:760px;margin:18px 0 26px}
+.gallery-text-link,.menu-page>a{text-decoration:underline;text-underline-offset:4px}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.product-card{min-width:0;padding:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;text-align:left;font:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(37,39,32,.1)}
+.product-card img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:white}
+.product-caption{display:block;padding:16px 18px 20px}
+.product-caption small{display:block;color:var(--rust);font-size:10px;letter-spacing:.09em;margin-bottom:7px}
+.product-caption strong{display:block;font-size:14px;line-height:1.45;font-weight:500}
+.gallery-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:28px}
+#gallery-status{font-size:12px;color:#616458}
+.gallery-actions{display:flex;gap:10px;flex-wrap:wrap}
+.gallery-actions button{font-family:inherit;cursor:pointer}
+[hidden]{display:none!important}
+.official-menu{margin-top:70px;padding-top:48px;border-top:1px solid var(--line)}
+.official-menu-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
+.official-menu-head h3{font-family:"Playfair Display",serif;font-size:clamp(32px,4vw,48px);line-height:1.15;margin:0}
+.official-menu-head p:not(.eyebrow){max-width:380px;color:#616458;font-size:14px;margin:0}
+.menu-pages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.menu-preview{display:block;width:100%;padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:18px;text-align:left;cursor:zoom-in;font:inherit;color:var(--forest)}
+.menu-preview img{height:330px;object-fit:contain;background:white;border-radius:8px}
+.menu-preview>span{display:block;padding:16px 8px 4px;font-weight:700}
+.menu-preview>span>span{float:right;color:var(--rust)}
+.menu-preview small{display:block;font-size:12px;font-weight:400;color:#616458}
+.menu-page>a{display:inline-block;margin-top:12px;font-size:12px}
+.product-card:focus-visible,.menu-preview:focus-visible,.product-filters button:focus-visible,.gallery-actions button:focus-visible,.viewer :focus-visible{outline:3px solid var(--rust);outline-offset:4px}
+body.viewer-open{overflow:hidden}
+.viewer{padding:0;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--ink);width:min(1100px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);overflow:hidden}
+.viewer::backdrop{background:rgba(20,26,20,.78);backdrop-filter:blur(5px)}
+.viewer-shell{display:flex;flex-direction:column;height:min(850px,calc(100dvh - 26px));min-width:0}
+.viewer-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px}
+.viewer-header h2{font:600 18px/1.4 "DM Sans",sans-serif;letter-spacing:0;margin:0;overflow-wrap:anywhere}
+.viewer-header button{flex-shrink:0}
+.viewer-toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 12px;align-items:center}
+.viewer-toolbar button{padding:8px 12px;font-size:12px}
+.viewer-toolbar button:disabled{opacity:.45;cursor:default}
+.viewer-pan{flex:1;min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;background:#e6e1d7;position:relative;touch-action:pan-x pan-y pinch-zoom}
+.viewer-pan img{display:block;max-width:none;height:auto;margin:0}
+.viewer:not(.is-menu) .viewer-pan img{width:100%;height:100%;object-fit:contain}
+.viewer-footer{padding:12px 20px;font-size:12px;display:flex;gap:10px 20px;flex-wrap:wrap}
+.viewer-footer p{width:100%;margin:0;color:#616458}
+.viewer-footer a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .product-caption{padding:12px}
+ .product-caption strong{font-size:12px}
+ .product-caption small{font-size:9px;letter-spacing:.03em}
+ .product-filters{gap:8px}
+ .product-filters button{font-size:12px;padding:10px 12px}
+ .official-menu-head{flex-direction:column;align-items:start;gap:18px}
+ .menu-pages{gap:12px}
+ .menu-preview{padding:8px;border-radius:12px}
+ .menu-preview img{height:210px}
+ .menu-preview>span{padding:12px 2px 4px;font-size:13px}
+ .menu-preview small{font-size:10px}
+ .viewer-header{padding:12px}
+ .viewer-header h2{font-size:15px}
+ .viewer-header button{padding:8px 12px;font-size:12px}
+ .viewer-toolbar{padding:0 12px 10px;gap:6px}
+ .viewer-footer{padding:10px 12px}
+}
+@media(prefers-reduced-motion:reduce){.product-card{transition:none}.product-card:hover{transform:none}}

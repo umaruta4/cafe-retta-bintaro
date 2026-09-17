@@ -249,12 +249,15 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
 }
 
 </style>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="assets/product-gallery.css" />
+  <script src="assets/product-gallery.js" defer></script>
 </head>
 <body>
   <header class="nav-wrap">
     <nav class="nav container" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="Cafe Retta home">
-        <span class="brand-mark">R</span>
+        <img class="brand-mark" src="assets/images/retta-logo.webp" alt="Logo Cafe Retta" width="42" height="42" />
         <span>
           <b>CAFE RETTA</b>
           <small>BINTARO</small>
@@ -364,44 +367,50 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
       <div class="container">
         <div class="menu-head reveal">
           <div>
-            <p class="eyebrow">POPULAR PICKS</p>
+            <p class="eyebrow">DARI DAPUR & COFFEE BAR RETTA</p>
             <h2>Comfort in<br>every order.</h2>
           </div>
-          <p>
-            Berdasarkan menu dan item yang sering disebut pengunjung,
-            Retta dikenal dengan pilihan kopi, latte, roti, pancakes, teh, dan chocolate drinks.
-          </p>
+          <p>Intip sajian Retta, dari kopi hingga teman makan siang. Pilih kategori dan ketuk foto untuk melihat lebih dekat, atau <a class="gallery-text-link" href="#official-menu">buka menu lengkap ↓</a>.</p>
         </div>
 
-        <div class="menu-grid">
-          <article class="menu-card reveal">
-            <div class="menu-icon">☕</div>
-            <small>COFFEE</small>
-            <h3>Latte & Coffee</h3>
-            <p>Kopi untuk memulai pagi atau menemani sesi kerja panjang.</p>
-          </article>
-          <article class="menu-card reveal">
-            <div class="menu-icon">🥞</div>
-            <small>BRUNCH</small>
-            <h3>Pancakes</h3>
-            <p>Pilihan manis yang sering disebut oleh pengunjung Cafe Retta.</p>
-          </article>
-          <article class="menu-card reveal">
-            <div class="menu-icon">🍞</div>
-            <small>BITES</small>
-            <h3>Bread & Light Bites</h3>
-            <p>Pas untuk sarapan ringan, snack, atau teman minum kopi.</p>
-          </article>
-          <article class="menu-card reveal">
-            <div class="menu-icon">🍫</div>
-            <small>NON-COFFEE</small>
-            <h3>Tea & Chocolate</h3>
-            <p>Alternatif non-coffee untuk santai kapan saja.</p>
-          </article>
+        <div id="product-filters" class="product-filters" role="group" aria-label="Filter kategori foto" hidden></div>
+        <p class="gallery-note">Keterangan foto adalah deskripsi visual, bukan nama resmi produk. Nama dan harga dapat dilihat pada menu resmi di bawah.</p>
+        <div id="product-grid" class="product-grid" aria-label="Galeri foto sajian"></div>
+        <div class="gallery-bottom">
+          <p id="gallery-status" role="status">Memuat foto sajian…</p>
+          <div class="gallery-actions">
+            <button id="gallery-more" class="btn btn-primary" type="button" hidden>Lihat foto lainnya</button>
+            <button id="gallery-all" class="btn btn-ghost" type="button" hidden>Lihat semua foto</button>
+          </div>
         </div>
+        <noscript><p>Aktifkan JavaScript untuk melihat galeri foto. Menu lengkap tetap dapat dibuka melalui tautan di bawah.</p></noscript>
+
+        <section id="official-menu" class="official-menu" aria-labelledby="official-menu-title">
+          <div class="official-menu-head">
+            <div><p class="eyebrow">MENU RESMI CAFE RETTA</p><h3 id="official-menu-title">Temukan pilihanmu.</h3></div>
+            <p>Dua halaman menu, langsung dari cafe. Ketuk untuk memperbesar; geser gambar untuk membaca detailnya.</p>
+          </div>
+          <div class="menu-pages">
+            <article class="menu-page">
+              <button class="menu-preview" type="button" data-menu="1" aria-label="Perbesar menu halaman 1">
+                <img src="assets/menu/menu-1.jpg" alt="Menu resmi Cafe Retta halaman 1" loading="lazy" decoding="async" />
+                <span>Halaman 01 <span aria-hidden="true">↗</span><small>Ketuk untuk memperbesar</small></span>
+              </button>
+              <a href="assets/menu/menu-1.jpg" target="_blank" rel="noopener noreferrer">Buka gambar asli halaman 1 ↗</a>
+            </article>
+            <article class="menu-page">
+              <button class="menu-preview" type="button" data-menu="2" aria-label="Perbesar menu halaman 2">
+                <img src="assets/menu/menu-2.jpg" alt="Menu resmi Cafe Retta halaman 2" loading="lazy" decoding="async" />
+                <span>Halaman 02 <span aria-hidden="true">↗</span><small>Ketuk untuk memperbesar</small></span>
+              </button>
+              <a href="assets/menu/menu-2.jpg" target="_blank" rel="noopener noreferrer">Buka gambar asli halaman 2 ↗</a>
+            </article>
+          </div>
+          <p class="gallery-note">Harga dan ketersediaan mengikuti menu terbaru cafe. Silakan konfirmasi saat memesan.</p>
+        </section>
 
         <div class="menu-cta reveal">
-          <p><strong>Perkiraan spend:</strong> sekitar Rp25.000–Rp50.000 per orang.</p>
+          <p>Sudah menemukan pilihanmu? Pesan melalui kanal resmi Retta.</p>
           <a href="https://gofood.co.id/jakarta/restaurant/23ae241b-4d66-434b-83f7-0f6761619b83?as=gmaps" target="_blank" rel="noreferrer">
             Order via GoFood ↗
           </a>
@@ -486,7 +495,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
   <footer>
     <div class="container footer-grid">
       <a class="brand footer-brand" href="#home">
-        <span class="brand-mark">R</span>
+        <img class="brand-mark" src="assets/images/retta-logo.webp" alt="Logo Cafe Retta" width="42" height="42" />
         <span><b>CAFE RETTA</b><small>BINTARO</small></span>
       </a>
       <p>Coffee · Brunch · Cowork<br>Graha Raya, Bintaro</p>
