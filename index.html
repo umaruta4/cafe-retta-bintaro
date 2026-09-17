@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cafe Retta Bintaro — coffee, brunch, and a cozy coworking space in Graha Raya Bintaro." />
+  <meta name="theme-color" content="#2f3b2f" />
+  <title>Cafe Retta Bintaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --ink:#252720;
+  --forest:#2f3b2f;
+  --sage:#a8b29a;
+  --cream:#f3eee3;
+  --paper:#fbf7ef;
+  --latte:#c9a47f;
+  --rust:#aa5c3c;
+  --line:rgba(37,39,32,.14);
+  --white:#fffdf8;
+  --shadow:0 30px 80px rgba(37,39,32,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:"DM Sans",system-ui,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{display:block;width:100%}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.nav-wrap{
+  position:fixed;z-index:50;left:0;right:0;top:0;
+  background:rgba(251,247,239,.86);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(37,39,32,.06)
+}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;letter-spacing:.08em}
+.brand-mark{
+  display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--forest);
+  border-radius:50%;font-family:"Playfair Display",serif;font-size:24px;font-style:italic
+}
+.brand b{display:block;font-size:13px;line-height:1.2}
+.brand small{display:block;font-size:9px;letter-spacing:.25em;margin-top:3px}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:13px;font-weight:600}
+.nav-links>a:not(.nav-cta){position:relative}
+.nav-links>a:not(.nav-cta)::after{
+  content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--forest);transition:.25s
+}
+.nav-links>a:hover::after{right:0}
+.nav-cta{border:1px solid var(--forest);padding:11px 16px;border-radius:100px}
+.nav-toggle{display:none;border:0;background:transparent;padding:8px}
+.nav-toggle span{display:block;width:24px;height:1px;background:var(--ink);margin:6px}
+
+.hero{
+  min-height:860px;padding:150px 0 80px;display:grid;align-items:center;position:relative;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(168,178,154,.27), transparent 33%),
+    linear-gradient(135deg,#fbf7ef 0%,#f0e8d9 100%);
+}
+.hero-glow{
+  position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(170,92,60,.09);
+  filter:blur(10px);left:-100px;bottom:40px
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
+.eyebrow{
+  font-size:11px;letter-spacing:.24em;font-weight:700;color:var(--rust);margin:0 0 18px
+}
+h1,h2{font-family:"Playfair Display",serif;letter-spacing:-.045em;line-height:.95;margin:0}
+h1{font-size:clamp(68px,7vw,110px)}
+h1 em,h2 em{font-weight:600;color:var(--forest)}
+.hero-lead{font-size:18px;max-width:590px;margin:30px 0;color:#54564d}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;padding:15px 22px;border-radius:100px;
+  font-size:13px;font-weight:700;border:1px solid var(--forest);transition:.25s
+}
+.btn-primary{background:var(--forest);color:var(--white)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(47,59,47,.2)}
+.btn-ghost:hover{background:rgba(47,59,47,.06)}
+.btn-light{background:var(--paper);color:var(--forest);border-color:var(--paper)}
+.hero-meta{display:flex;gap:36px;margin-top:52px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-meta div{display:flex;flex-direction:column}
+.hero-meta strong{font-size:16px}
+.hero-meta span{font-size:11px;color:#777b70;margin-top:3px}
+.hero-visual{position:relative;min-height:610px}
+.visual-main{
+  position:absolute;right:10px;top:0;width:88%;border-radius:220px 220px 28px 28px;overflow:hidden;
+  box-shadow:var(--shadow);background:#d7c7af
+}
+.visual-main img{aspect-ratio:4/5;object-fit:cover}
+.photo-note{
+  position:absolute;left:22px;bottom:18px;background:rgba(251,247,239,.82);backdrop-filter:blur(12px);
+  padding:8px 12px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.08em
+}
+.floating-card{
+  position:absolute;left:-10px;bottom:70px;background:var(--white);padding:16px 20px 16px 14px;border-radius:18px;
+  box-shadow:0 18px 50px rgba(37,39,32,.14);display:flex;gap:13px;align-items:center
+}
+.floating-card .cup{font-size:28px}
+.floating-card strong{display:block;font-size:13px}
+.floating-card small{font-size:10px;color:#777b70}
+.stamp{
+  position:absolute;right:-14px;top:100px;width:88px;height:88px;border-radius:50%;background:var(--rust);color:#fff;
+  display:grid;place-items:center;text-align:center;font-size:10px;line-height:1.35;font-weight:700;letter-spacing:.12em;
+  transform:rotate(9deg);box-shadow:0 15px 35px rgba(170,92,60,.25)
+}
+
+.strip{background:var(--forest);color:#f6efe2;padding:17px 0;overflow:hidden}
+.strip-track{display:flex;gap:28px;justify-content:center;align-items:center;white-space:nowrap;font-size:11px;letter-spacing:.22em;font-weight:700}
+.strip i{color:var(--latte);font-style:normal}
+
+.section{padding:120px 0}
+.split{display:grid;grid-template-columns:.82fr 1.18fr;gap:100px}
+.section-heading{position:sticky;top:130px;align-self:start}
+h2{font-size:clamp(52px,6vw,86px)}
+.big-copy{font-family:"Playfair Display",serif;font-size:29px;line-height:1.3;margin:0 0 55px}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.feature-grid article{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feature-grid span{font-size:10px;color:var(--rust);font-weight:700}
+.feature-grid h3{font-size:17px;margin:30px 0 8px}
+.feature-grid p{font-size:13px;color:#6a6e63;margin:0}
+
+.menu-section{background:var(--cream)}
+.menu-head{display:flex;justify-content:space-between;gap:60px;align-items:end;margin-bottom:60px}
+.menu-head>p{max-width:420px;color:#66695f;margin:0}
+.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(37,39,32,.17);border-left:1px solid rgba(37,39,32,.17)}
+.menu-card{min-height:300px;padding:28px;border-right:1px solid rgba(37,39,32,.17);border-bottom:1px solid rgba(37,39,32,.17);transition:.3s}
+.menu-card:hover{background:var(--paper);transform:translateY(-4px)}
+.menu-icon{font-size:38px;margin-bottom:58px}
+.menu-card small{font-size:9px;letter-spacing:.2em;color:var(--rust);font-weight:700}
+.menu-card h3{font-family:"Playfair Display",serif;font-size:28px;line-height:1.05;margin:8px 0 12px}
+.menu-card p{font-size:13px;color:#6d7067;margin:0}
+.menu-cta{
+  display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px
+}
+.menu-cta a{font-weight:700;border-bottom:1px solid var(--ink)}
+
+.space-section{background:var(--paper)}
+.space-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}
+.gallery{
+  display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:330px 230px;gap:18px
+}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:20px}
+.gallery-a{grid-row:1/3}
+.gallery img{height:100%;object-fit:cover}
+.gallery figcaption{
+  position:absolute;left:18px;bottom:18px;background:rgba(251,247,239,.86);backdrop-filter:blur(10px);
+  padding:8px 12px;border-radius:100px;font-size:11px;font-weight:600
+}
+.gallery-quote{
+  border-radius:20px;background:var(--forest);color:#f5efe4;padding:30px;display:flex;flex-direction:column;justify-content:end
+}
+.gallery-quote span{font-family:"Playfair Display",serif;font-size:70px;line-height:.6;color:var(--latte)}
+.gallery-quote p{font-family:"Playfair Display",serif;font-size:30px;margin:14px 0 3px}
+.gallery-quote small{color:#cdd3c9}
+
+.visit{background:#efe5d3}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.visit-details{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;margin:48px 0}
+.visit-details>div{padding-top:16px;border-top:1px solid rgba(37,39,32,.2)}
+.visit-details small{font-size:9px;letter-spacing:.18em;font-weight:700;color:var(--rust)}
+.visit-details p{font-size:14px;margin:9px 0 0}
+.map-card{
+  min-height:560px;border-radius:28px;position:relative;overflow:hidden;background:
+  linear-gradient(35deg,transparent 47%,rgba(47,59,47,.12) 48%,rgba(47,59,47,.12) 50%,transparent 51%),
+  linear-gradient(145deg,transparent 46%,rgba(47,59,47,.1) 47%,rgba(47,59,47,.1) 49%,transparent 50%),
+  #cbd1bc;
+  background-size:110px 110px,150px 150px,auto;
+  box-shadow:var(--shadow)
+}
+.map-card::before,.map-card::after{
+  content:"";position:absolute;background:#efe9d7;border-radius:100px;transform:rotate(-20deg)
+}
+.map-card::before{width:520px;height:35px;left:-80px;top:120px}
+.map-card::after{width:600px;height:26px;right:-180px;bottom:140px;transform:rotate(36deg)}
+.map-pin{
+  position:absolute;left:53%;top:44%;width:72px;height:72px;border-radius:50% 50% 50% 0;
+  background:var(--rust);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:30px;
+  transform:rotate(-45deg);box-shadow:0 14px 35px rgba(86,54,38,.25);z-index:3
+}
+.map-pin::first-letter{transform:rotate(45deg)}
+.map-label{
+  position:absolute;left:30px;right:30px;bottom:30px;padding:18px;background:rgba(251,247,239,.88);
+  backdrop-filter:blur(12px);border-radius:16px;z-index:4
+}
+.map-label strong{display:block}
+.map-label small{color:#74786d}
+
+.cta-section{background:var(--rust);color:#fff5eb;padding:110px 0}
+.cta-inner{text-align:center}
+.cta-inner .eyebrow{color:#f1d0bd}
+.cta-inner h2{max-width:800px;margin:0 auto 35px}
+
+footer{padding:45px 0;background:#22271f;color:#f4eee2}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;align-items:end}
+.footer-brand .brand-mark{border-color:#f4eee2}
+footer p{font-size:12px;color:#b8bdb1;margin:0}
+.footer-note{text-align:right}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media (max-width: 960px){
+  .nav-links{
+    position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:24px 20px 30px;
+    display:none;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .hero{min-height:auto;padding-top:130px}
+  .hero-grid,.split,.visit-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{min-height:580px;max-width:620px;width:100%;margin:auto}
+  .section-heading{position:static}
+  .menu-grid{grid-template-columns:1fr 1fr}
+  .menu-head{align-items:start;flex-direction:column}
+}
+@media (max-width: 650px){
+  .container{width:min(100% - 28px,1180px)}
+  .section{padding:85px 0}
+  h1{font-size:58px}
+  h2{font-size:50px}
+  .hero-meta{gap:18px;justify-content:space-between}
+  .hero-meta strong{font-size:14px}
+  .hero-visual{min-height:470px}
+  .visual-main{width:92%;right:0}
+  .floating-card{left:0;bottom:10px}
+  .stamp{right:-2px;top:60px}
+  .feature-grid,.menu-grid{grid-template-columns:1fr}
+  .menu-card{min-height:auto}
+  .menu-icon{margin-bottom:35px}
+  .menu-cta{align-items:flex-start;gap:20px;flex-direction:column}
+  .gallery{grid-template-columns:1fr;grid-template-rows:420px 260px 210px}
+  .gallery-a{grid-row:auto}
+  .visit-details{grid-template-columns:1fr}
+  .map-card{min-height:420px}
+  .footer-grid{grid-template-columns:1fr;align-items:start}
+  .footer-note{text-align:left}
+}
+
+</style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Cafe Retta home">
+        <span class="brand-mark">R</span>
+        <span>
+          <b>CAFE RETTA</b>
+          <small>BINTARO</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#story">Tentang</a>
+        <a href="#menu">Menu</a>
+        <a href="#space">Space</a>
+        <a href="#visit">Lokasi</a>
+        <a class="nav-cta" href="https://wa.me/6285136908230" target="_blank" rel="noreferrer">Hubungi Kami</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">COFFEE · BRUNCH · COWORK</p>
+          <h1>A cozy corner<br><em>to slow down.</em></h1>
+          <p class="hero-lead">
+            Mulai pagi dengan kopi, lanjutkan hari dengan makanan yang comforting,
+            atau bawa laptop dan selesaikan pekerjaanmu di Cafe Retta Bintaro.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#visit">Datang ke Retta</a>
+            <a class="btn btn-ghost" href="https://esborder.qs.esb.co.id/RETTA/CFRT/mode" target="_blank" rel="noreferrer">Lihat / Pesan Menu</a>
+          </div>
+
+          <div class="hero-meta">
+            <div><strong>06.00–22.00</strong><span>Setiap hari</span></div>
+            <div><strong>4.9 ★</strong><span>Google rating</span></div>
+            <div><strong>Bintaro</strong><span>Graha Raya</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="visual-card visual-main">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCI+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjYzliMThmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNTk2ODU0Ii8+PC9saW5lYXJHcmFkaWVudD4KICA8ZmlsdGVyIGlkPSJibHVyIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMiIvPjwvZmlsdGVyPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iMTAwMCIgZmlsbD0idXJsKCNiZykiLz4KPGNpcmNsZSBjeD0iNjQwIiBjeT0iMTYwIiByPSIxODAiIGZpbGw9IiNmN2RmYWUiIG9wYWNpdHk9Ii40NSIgZmlsdGVyPSJ1cmwoI2JsdXIpIi8+CjxyZWN0IHg9IjEwMCIgeT0iMTIwIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYxMCIgcng9IjI2MCIgZmlsbD0iI2Y0ZTdjZiIgb3BhY2l0eT0iLjE4Ii8+CjxyZWN0IHg9IjE2MCIgeT0iNTQwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjM2IiByeD0iMTgiIGZpbGw9IiM0MjNkMzMiIG9wYWNpdHk9Ii41NSIvPgo8cmVjdCB4PSIxOTAiIHk9IjU3NSIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE3MCIgcng9IjExIiBmaWxsPSIjNDIzZDMzIiBvcGFjaXR5PSIuNTUiLz4KPHJlY3QgeD0iNTg1IiB5PSI1NzUiIHdpZHRoPSIyMiIgaGVpZ2h0PSIxNzAiIHJ4PSIxMSIgZmlsbD0iIzQyM2QzMyIgb3BhY2l0eT0iLjU1Ii8+CjxlbGxpcHNlIGN4PSI0MTAiIGN5PSI1MTUiIHJ4PSIxMDUiIHJ5PSIzOCIgZmlsbD0iI2YxZTJjNiIvPgo8cGF0aCBkPSJNMzI1IDQ3MGMxOC01MCAxNDUtNTAgMTY4IDB2NzVIMzI1eiIgZmlsbD0iIzZkNGYzZSIvPgo8cGF0aCBkPSJNNDkwIDQ4NWM3NS04IDc1IDc4IDEwIDc5IiBmaWxsPSJub25lIiBzdHJva2U9IiM2ZDRmM2UiIHN0cm9rZS13aWR0aD0iMTgiLz4KPHBhdGggZD0iTTM1MCA0NTBjMTQtMzggMjUtNjQgOS05NU00MTAgNDQ1YzEzLTM0IDEyLTU3IDAtODJNNDYyIDQ1MWMyMC0zNyAyNC02MSAxMi05MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjZlZmUzIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iLjgiLz4KPHRleHQgeD0iNzQiIHk9Ijg3MCIgZmlsbD0iI2ZmZjhlYyIgZm9udC1zaXplPSI3MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc3R5bGU9Iml0YWxpYyI+Q2FmZSBSZXR0YTwvdGV4dD4KPHRleHQgeD0iNzgiIHk9IjkxNCIgZmlsbD0iI2ZmZjhlYyIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGxldHRlci1zcGFjaW5nPSI4Ij5CSU5UQVJPPC90ZXh0Pgo8L3N2Zz4=" alt="Visual placeholder Cafe Retta — ganti dengan foto resmi Cafe Retta" />
+            <div class="photo-note">Replace with official Cafe Retta photo</div>
+          </div>
+          <div class="floating-card">
+            <span class="cup">☕</span>
+            <div>
+              <strong>Good morning, Bintaro.</strong>
+              <small>Open daily from 6 AM</small>
+            </div>
+          </div>
+          <div class="stamp">COZY<br>COFFEE<br>SPACE</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Cafe highlights">
+      <div class="strip-track">
+        <span>COFFEE</span><i>✦</i><span>BRUNCH</span><i>✦</i><span>WIFI</span><i>✦</i>
+        <span>COWORK</span><i>✦</i><span>TAKEAWAY</span><i>✦</i><span>BINTARO</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="container split">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ABOUT RETTA</p>
+          <h2>More than just<br>a coffee stop.</h2>
+        </div>
+        <div class="story-copy reveal">
+          <p class="big-copy">
+            Cafe Retta hadir sebagai spot santai sekaligus coworking space di kawasan Graha Raya Bintaro.
+            Tempat yang pas untuk sarapan, catch-up, meeting ringan, atau bekerja sambil ditemani kopi.
+          </p>
+          <div class="feature-grid">
+            <article>
+              <span>01</span>
+              <h3>Cozy atmosphere</h3>
+              <p>Suasana nyaman untuk ngobrol santai maupun fokus bekerja.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Work-friendly</h3>
+              <p>Wi-Fi tersedia dan konsep tempatnya juga dikenal sebagai coworking space.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Early start</h3>
+              <p>Buka sejak pukul 06.00 — cocok untuk breakfast meeting atau coffee before work.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Easy ordering</h3>
+              <p>Dine-in, takeaway, dan tersedia kanal pemesanan online.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="menu-head reveal">
+          <div>
+            <p class="eyebrow">POPULAR PICKS</p>
+            <h2>Comfort in<br>every order.</h2>
+          </div>
+          <p>
+            Berdasarkan menu dan item yang sering disebut pengunjung,
+            Retta dikenal dengan pilihan kopi, latte, roti, pancakes, teh, dan chocolate drinks.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card reveal">
+            <div class="menu-icon">☕</div>
+            <small>COFFEE</small>
+            <h3>Latte & Coffee</h3>
+            <p>Kopi untuk memulai pagi atau menemani sesi kerja panjang.</p>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon">🥞</div>
+            <small>BRUNCH</small>
+            <h3>Pancakes</h3>
+            <p>Pilihan manis yang sering disebut oleh pengunjung Cafe Retta.</p>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon">🍞</div>
+            <small>BITES</small>
+            <h3>Bread & Light Bites</h3>
+            <p>Pas untuk sarapan ringan, snack, atau teman minum kopi.</p>
+          </article>
+          <article class="menu-card reveal">
+            <div class="menu-icon">🍫</div>
+            <small>NON-COFFEE</small>
+            <h3>Tea & Chocolate</h3>
+            <p>Alternatif non-coffee untuk santai kapan saja.</p>
+          </article>
+        </div>
+
+        <div class="menu-cta reveal">
+          <p><strong>Perkiraan spend:</strong> sekitar Rp25.000–Rp50.000 per orang.</p>
+          <a href="https://gofood.co.id/jakarta/restaurant/23ae241b-4d66-434b-83f7-0f6761619b83?as=gmaps" target="_blank" rel="noreferrer">
+            Order via GoFood ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section space-section" id="space">
+      <div class="container">
+        <div class="space-head reveal">
+          <p class="eyebrow">THE SPACE</p>
+          <h2>Your table for<br>coffee, talks & work.</h2>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-a reveal">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCI+CjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjkwMCIgZmlsbD0iI2FhYjM5YyIvPgo8cmVjdCB5PSI1NjAiIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iIzhjNzM1YiIvPgo8cmVjdCB4PSI5MCIgeT0iODAiIHdpZHRoPSI0MTAiIGhlaWdodD0iMzkwIiByeD0iMTIiIGZpbGw9IiNlOWRkYzQiLz4KPHJlY3QgeD0iMTI1IiB5PSIxMTUiIHdpZHRoPSIxNjAiIGhlaWdodD0iMzIwIiBmaWxsPSIjNmM3ODY0Ii8+CjxyZWN0IHg9IjMwNSIgeT0iMTE1IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjMyMCIgZmlsbD0iIzc0ODE2YiIvPgo8cmVjdCB4PSI2MjAiIHk9IjE2MCIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIyNjAiIHJ4PSIxOCIgZmlsbD0iIzM3NDEzNyIvPgo8Y2lyY2xlIGN4PSI3OTAiIGN5PSIyODUiIHI9IjkyIiBmaWxsPSIjY2NiMzhjIi8+CjxyZWN0IHg9IjE0MCIgeT0iNjIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjQ0IiByeD0iMjAiIGZpbGw9IiM0NTNjMzIiLz4KPHJlY3QgeD0iMTc4IiB5PSI2NjAiIHdpZHRoPSIyNSIgaGVpZ2h0PSIxMjAiIGZpbGw9IiM0NTNjMzIiLz4KPHJlY3QgeD0iNDM4IiB5PSI2NjAiIHdpZHRoPSIyNSIgaGVpZ2h0PSIxMjAiIGZpbGw9IiM0NTNjMzIiLz4KPHJlY3QgeD0iNjkwIiB5PSI2MTAiIHdpZHRoPSIzMTAiIGhlaWdodD0iNDAiIHJ4PSIyMCIgZmlsbD0iIzQ1M2MzMiIvPgo8cmVjdCB4PSI3MzAiIHk9IjY0NyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEyNSIgZmlsbD0iIzQ1M2MzMiIvPgo8cmVjdCB4PSI5MzciIHk9IjY0NyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEyNSIgZmlsbD0iIzQ1M2MzMiIvPgo8Y2lyY2xlIGN4PSI1NjUiIGN5PSIxNjAiIHI9IjI4IiBmaWxsPSIjZjNjZjkxIiBvcGFjaXR5PSIuOCIvPgo8Y2lyY2xlIGN4PSIxMDIwIiBjeT0iMTEwIiByPSIzOCIgZmlsbD0iI2YzY2Y5MSIgb3BhY2l0eT0iLjgiLz4KPHRleHQgeD0iNzgiIHk9Ijg0MCIgZmlsbD0iI2Y5ZjFlMiIgZm9udC1zaXplPSI0MiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiPlNQQUNFIC8gUEhPVE8gUExBQ0VIT0xERVI8L3RleHQ+Cjwvc3ZnPg==" alt="Placeholder area Cafe Retta" />
+            <figcaption>Cozy café ambience</figcaption>
+          </figure>
+          <figure class="gallery-b reveal">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgOTAwIj4KPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI5MDAiIGZpbGw9IiNlOGRkY2EiLz4KPGNpcmNsZSBjeD0iNDUwIiBjeT0iNDMwIiByPSIyOTAiIGZpbGw9IiNiZDlmN2MiLz4KPGVsbGlwc2UgY3g9IjQ1MCIgY3k9IjUzMCIgcng9IjI3MCIgcnk9Ijk2IiBmaWxsPSIjN2M2NzUyIiBvcGFjaXR5PSIuMjIiLz4KPGVsbGlwc2UgY3g9IjQ1MCIgY3k9IjQyMCIgcng9IjE5MCIgcnk9IjE1MCIgZmlsbD0iI2Y1ZWZlNCIvPgo8ZWxsaXBzZSBjeD0iNDUwIiBjeT0iNDA1IiByeD0iMTU1IiByeT0iMTE1IiBmaWxsPSIjNmU0OTM2Ii8+CjxwYXRoIGQ9Ik0zNzUgMzkwYzQyLTgwIDExMC04MCAxNTAgMC00MiA2NC0xMDggNjUtMTUwIDBaIiBmaWxsPSIjZWFkMWI0Ii8+CjxwYXRoIGQ9Ik00NTAgMzUwYy0yMCAzMi0yMCA2NSAwIDk3TTQwMCAzNzJjMzUgMjAgNjUgMjAgMTAwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZjRlNyIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik02MjUgNDA1YzEyMC0yMCAxMjUgMTYwIDUgMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNWVmZTQiIHN0cm9rZS13aWR0aD0iMzQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8dGV4dCB4PSI3MCIgeT0iNzkwIiBmaWxsPSIjNGM0NDNhIiBmb250LXNpemU9IjM4IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zdHlsZT0iaXRhbGljIj5Db2ZmZWUgLyBwaG90byBwbGFjZWhvbGRlcjwvdGV4dD4KPC9zdmc+" alt="Placeholder coffee Cafe Retta" />
+            <figcaption>Your everyday coffee stop</figcaption>
+          </figure>
+          <div class="gallery-quote reveal">
+            <span>“</span>
+            <p>Cozy place.</p>
+            <small>— Google reviewer</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy reveal">
+          <p class="eyebrow">COME SAY HI</p>
+          <h2>See you<br>at Retta.</h2>
+
+          <div class="visit-details">
+            <div>
+              <small>ADDRESS</small>
+              <p>Ruko Regia Boulevard,<br>Jl. Graha Raya Bintaro No.11 RB 1,<br>Pondok Kacang Barat, Pondok Aren,<br>Tangerang Selatan, Banten 15226</p>
+            </div>
+            <div>
+              <small>OPENING HOURS</small>
+              <p>Monday — Sunday<br><strong>06.00 — 22.00</strong></p>
+            </div>
+            <div>
+              <small>CONTACT</small>
+              <p><a href="tel:+6285136908230">+62 851-3690-8230</a></p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Cafe+Retta+Bintaro+Ruko+Regia+Boulevard" target="_blank" rel="noreferrer">Open Google Maps</a>
+            <a class="btn btn-ghost" href="https://wa.me/6285136908230" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="map-card reveal">
+          <div class="map-lines"></div>
+          <span class="map-pin">R</span>
+          <div class="map-label">
+            <strong>Cafe Retta Bintaro</strong>
+            <small>Graha Raya · Tangerang Selatan</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner reveal">
+        <p class="eyebrow">YOUR NEXT COFFEE?</p>
+        <h2>Make Retta part of your day.</h2>
+        <a class="btn btn-light" href="https://esborder.qs.esb.co.id/RETTA/CFRT/mode" target="_blank" rel="noreferrer">Explore the menu ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <a class="brand footer-brand" href="#home">
+        <span class="brand-mark">R</span>
+        <span><b>CAFE RETTA</b><small>BINTARO</small></span>
+      </a>
+      <p>Coffee · Brunch · Cowork<br>Graha Raya, Bintaro</p>
+      <p class="footer-note">
+        Website concept · 2026<br>
+        Public business information used for demo.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+const toggle = document.querySelector(".nav-toggle");
+const links = document.querySelector(".nav-links");
+
+toggle?.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  toggle.setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    links.classList.remove("open");
+    toggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+</script>
+</body>
+</html>
