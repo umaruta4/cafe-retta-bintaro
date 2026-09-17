@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/promo.css" />
   <style>
 :root{
   --ink:#252720;
@@ -270,6 +271,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
 
       <div class="nav-links">
         <a href="#story">Tentang</a>
+        <a href="#promo">Promo</a>
         <a href="#menu">Menu</a>
         <a href="#space">Space</a>
         <a href="#visit">Lokasi</a>
@@ -360,6 +362,18 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
             </article>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section promo-section" id="promo" aria-labelledby="promo-title">
+      <div class="container">
+        <div class="promo-head reveal">
+          <p class="eyebrow">PROMO CAFE RETTA</p>
+          <h2 id="promo-title">Sedang berlangsung<br>di Retta.</h2>
+          <p>Promo yang sedang aktif selama September 2026. Update berikutnya tinggal edit satu file.</p>
+        </div>
+        <div id="promo-list" class="promo-grid" aria-live="polite"></div>
+        <p id="promo-empty" class="promo-empty" hidden>Saat ini belum ada promo aktif. Cek Instagram <a href="https://www.instagram.com/caferetta.bintaro/" target="_blank" rel="noopener noreferrer">@caferetta.bintaro</a> untuk update terbaru.</p>
       </div>
     </section>
 
@@ -532,7 +546,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
 </script>
+
+<script src="assets/promo.js" defer></script>
+<script src="assets/product-gallery.js" defer></script>
 </body>
 </html>

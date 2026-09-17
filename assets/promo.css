@@ -1,0 +1,27 @@
+.promo-section{background:linear-gradient(180deg,var(--cream) 0%,#fff8ed 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.promo-head{max-width:680px;margin-bottom:48px}
+.promo-head p{color:#66695f;max-width:520px}
+.promo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.promo-card{background:var(--paper);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);position:relative;border:1px solid var(--line)}
+.promo-card .cover{display:block;aspect-ratio:4/3;background:#d8cdb5}
+.promo-card .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.promo-card .body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:14px;flex:1}
+.promo-card h3{font-family:"Playfair Display",serif;font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:0;color:var(--ink)}
+.promo-card .price{display:inline-flex;align-items:baseline;gap:8px;font-weight:700;color:var(--forest)}
+.promo-card .price strong{font-size:clamp(28px,3vw,40px);letter-spacing:-.02em}
+.promo-card .price span{font-size:11px;letter-spacing:.18em;color:var(--rust);font-weight:700;text-transform:uppercase}
+.promo-card ul{margin:0;padding-left:18px;font-size:14px;line-height:1.6;color:#45473f}
+.promo-card ul li{margin-bottom:4px}
+.promo-card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.promo-card .tag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:rgba(47,59,47,.08);color:var(--forest);padding:6px 12px;border-radius:100px;font-weight:700}
+.promo-card .tag.warn{background:rgba(170,92,60,.12);color:var(--rust)}
+.promo-card .meta-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#777b70;letter-spacing:.04em}
+.promo-card .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.promo-card .actions a{font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.promo-card .badge-ig{position:absolute;top:16px;left:16px;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:100px;text-transform:uppercase}
+.promo-empty{font-size:14px;color:#66695f}
+.promo-empty a{color:var(--forest);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:860px){
+  .promo-grid{grid-template-columns:1fr}
+  .promo-card .body{padding:22px}
+}

@@ -1,0 +1,44 @@
+{
+  "updated": "2026-09-17",
+  "items": [
+    {
+      "id": "weekend-treat",
+      "title": "Weekend lebih seru kalau ada teman ngemil.",
+      "price": "70K",
+      "price_label": "Paket",
+      "includes": [
+        "Aren Latte",
+        "Classic Chocolate",
+        "Snack Platter",
+        "Rotbak Choco Peanut"
+      ],
+      "tags": [
+        "Weekend only"
+      ],
+      "valid_from": "2026-09-04",
+      "valid_until": "2026-09-30",
+      "instagram_url": "https://www.instagram.com/p/Dc2RU26Pw9V/",
+      "cover": "assets/promos/weekend-treat.webp",
+      "cover_alt": "Empat sajian paket weekend Cafe Retta"
+    },
+    {
+      "id": "coffee-pastry-pancake",
+      "title": "Start your day with coffee & something good.",
+      "price_label": "Add-on kopi",
+      "includes": [
+        "🥐 +15K — 1 pastry",
+        "🥞 +10K — 1 pancake",
+        "Beli kopi apa pun di Retta, pilih teman ngopimu"
+      ],
+      "tags": [
+        "Weekdays",
+        "06.00–14.00"
+      ],
+      "valid_from": "2026-09-02",
+      "valid_until": "2026-09-30",
+      "instagram_url": "https://www.instagram.com/p/DcyTA8gmAAd/",
+      "cover": "assets/promos/coffee-pastry-pancake.webp",
+      "cover_alt": "Kopi susu dengan pilihan tambahan pastry atau pancake"
+    }
+  ]
+}
