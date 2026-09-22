@@ -159,6 +159,18 @@ h2{font-size:clamp(52px,6vw,86px)}
 .order-label{font-weight:500;opacity:.75;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
 .order-brand{font-size:16px;font-weight:800}
 .order-arrow{font-size:14px;margin-left:2px}
+.order-toggle{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#6d7067;
+  padding-top:8px;border-top:1px dashed #d8d3c5;margin-top:6px
+}
+.order-toggle>span{font-weight:600}
+.order-toggle button{
+  appearance:none;background:transparent;border:1px solid #d8d3c5;border-radius:100px;
+  padding:5px 12px;font-family:inherit;font-size:11px;font-weight:600;color:#3b3f36;
+  cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease
+}
+.order-toggle button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.order-toggle button[data-active="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 .space-section{background:var(--paper)}
 .space-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}
@@ -443,16 +455,29 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
         <div class="menu-cta reveal">
           <p>Sudah menemukan pilihanmu? Pesan melalui kanal resmi Retta.</p>
           <div class="order-channels">
-            <a class="order-btn order-gofood" href="https://gofood.co.id/jakarta/restaurant/23ae241b-4d66-434b-83f7-0f6761619b83?as=gmaps" target="_blank" rel="noreferrer">
+            <a class="order-btn order-gofood"
+               href="https://gofood.link/a/NS9Gu1q"
+               data-app-href="https://gofood.link/a/NS9Gu1q"
+               data-web-href="https://gofood.co.id/jakarta/restaurant/cafe-retta-bintaro-23ae241b-4d66-434b-83f7-0f6761619b83"
+               target="_blank" rel="noreferrer">
               <span class="order-label">Order via</span>
               <span class="order-brand">GoFood</span>
               <span class="order-arrow">↗</span>
             </a>
-            <a class="order-btn order-grabfood" href="https://food.grab.com/id/id/?search=Cafe%20Retta%20Bintaro" target="_blank" rel="noreferrer">
+            <a class="order-btn order-grabfood"
+               href="https://app.grab.com/s/Z3WkdB2H"
+               data-app-href="https://app.grab.com/s/Z3WkdB2H"
+               data-web-href="https://food.grab.com/id/id/restaurant/cafe-retta-pondok-kacang-barat-delivery/6-C7N2EAB2J4ETV6"
+               target="_blank" rel="noreferrer">
               <span class="order-label">Order via</span>
               <span class="order-brand">GrabFood</span>
               <span class="order-arrow">↗</span>
             </a>
+          </div>
+          <div class="order-toggle">
+            <span>Preferensi buka di:</span>
+            <button type="button" data-order-target="app">App</button>
+            <button type="button" data-order-target="web">Website</button>
           </div>
         </div>
       </div>
@@ -579,5 +604,6 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 </script>
 
 <script src="assets/promo.js" defer></script>
+<script src="assets/order-redirect.js" defer></script>
 </body>
 </html>
