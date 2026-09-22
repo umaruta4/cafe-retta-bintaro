@@ -1,37 +1,51 @@
-/* Editorial mood-board layout for menu showcase */
+/* Editorial mood-board layout for menu showcase — 3-col magazine grid */
 :root{
   --menu-grid-gap: 14px;
-  --menu-grid-row: 220px;
+  --menu-grid-row: 180px;
 }
 
+/*
+  Mockup-style 3-column grid:
+
+  Col 1 (tall heroes)  | Col 2 (mediums stacked) | Col 3 (mediums stacked)
+  +--------------------+-------------------------+-------------------------+
+  |                    |   LYCHEE TEA            |   AVOCADO LATTE         |
+  |   AMERICANO (tall) +-------------------------+-------------------------+
+  |                    |   ZESTY AMERICANO       |   LEMON TEA             |
+  |                    +-------------------------+-------------------------+
+  +--------------------+                         |                         |
+  |                    |   ROTBAKR CHOCO         |   SNACK PLATTER         |
+  |   PANCAKE BERRY    |                         |                         |
+  |   CHEESE (tall)    +-------------------------+-------------------------+
+  |                    |   PANCAKE SPECIAL (tall)|   (empty)               |
+  |                    |                         |                         |
+  +--------------------+-------------------------+-------------------------+
+
+  Tall heroes = span 2 rows. Mediums = 1 row.
+*/
 .product-grid.editorial{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(260px, 1.2fr) 1fr 1fr;
   grid-template-rows: repeat(4, var(--menu-grid-row));
   gap: var(--menu-grid-gap);
   grid-template-areas:
-    "hero-a  lychee   avocado  ."
-    "hero-a  zesty    lemon    roti"
-    "berry   hero-b   hero-b   snack"
-    "berry   hero-b   hero-b   snack";
+    "hero-a  lychee  avocado"
+    "hero-a  zesty   lemon"
+    "berry   roti    snack"
+    "berry   hero-b  hero-b";
 }
 
-.product-grid.editorial .product-card{aspect-ratio: auto;}
+.product-grid.editorial .product-card{ aspect-ratio: auto; }
 
-.product-grid.editorial .product-card[data-area="hero-a"]{
-  grid-area: hero-a;
-  /* fill grid cells — don't force aspect-ratio */
-}
-.product-grid.editorial .product-card[data-area="hero-b"]{
-  grid-area: hero-b;
-}
+.product-grid.editorial .product-card[data-area="hero-a"]   { grid-area: hero-a; }
+.product-grid.editorial .product-card[data-area="hero-b"]   { grid-area: hero-b; }
 .product-grid.editorial .product-card[data-area="berry"]   { grid-area: berry; }
-.product-grid.editorial .product-card[data-area="lychee"] { grid-area: lychee; }
-.product-grid.editorial .product-card[data-area="avocado"]{ grid-area: avocado; }
-.product-grid.editorial .product-card[data-area="roasted"]{ grid-area: roti; }
-.product-grid.editorial .product-card[data-area="zesty"]  { grid-area: zesty; }
-.product-grid.editorial .product-card[data-area="lemon"]  { grid-area: lemon; }
-.product-grid.editorial .product-card[data-area="snack"]  { grid-area: snack; }
+.product-grid.editorial .product-card[data-area="lychee"]  { grid-area: lychee; }
+.product-grid.editorial .product-card[data-area="avocado"] { grid-area: avocado; }
+.product-grid.editorial .product-card[data-area="roasted"] { grid-area: roti; }
+.product-grid.editorial .product-card[data-area="zesty"]   { grid-area: zesty; }
+.product-grid.editorial .product-card[data-area="lemon"]   { grid-area: lemon; }
+.product-grid.editorial .product-card[data-area="snack"]   { grid-area: snack; }
 
 /* Hero styling — bigger typography, overlay caption */
 .product-grid.editorial .product-card[data-hero="true"] .product-caption{
@@ -93,9 +107,9 @@
   text-transform: uppercase;
 }
 
-/* Responsive: collapse editorial to simple grid on mobile */
+/* Responsive: collapse editorial to simple grid on tablet */
 @media (max-width: 900px){
-  :root{ --menu-grid-row: 180px; }
+  :root{ --menu-grid-row: 160px; }
   .product-grid.editorial{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -111,6 +125,7 @@
   .product-grid.editorial .product-card[data-hero="true"] .product-caption strong{font-size: 20px;}
 }
 
+/* Responsive: phone — single column stack, keep tall cards visible */
 @media (max-width: 540px){
   :root{ --menu-grid-row: 150px; }
   .product-grid.editorial{

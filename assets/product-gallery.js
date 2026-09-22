@@ -84,16 +84,16 @@
   });
 
   const grid = document.querySelector('#product-grid');
-  const filters = document.querySelector('#product-filters');
   const status = document.querySelector('#gallery-status');
   const more = document.querySelector('#gallery-more');
   const all = document.querySelector('#gallery-all');
-  const curated = [14, 18, 26, 28, 25, 10, 30, 65, 69, 73];
+
   // Editorial mood-board area mapping (id → grid area name)
+  // 3-column magazine layout: 2 tall heroes in column 1, mediums in cols 2-3.
   const editorialAreas = {
-    102: 'hero-a',   // Americano (HERO 1)
-    104: 'hero-b',   // Pancake Special (HERO 2)
-    103: 'berry',    // Pancake Berry Cheese
+    102: 'hero-a',   // Americano (HERO 1, tall, top-left)
+    104: 'hero-b',   // Pancake Special (HERO 2, tall, bottom-middle)
+    103: 'berry',    // Pancake Berry Cheese (tall, bottom-left)
     101: 'lychee',   // Lychee Tea
     107: 'avocado',  // Avocado Latte
     108: 'zesty',    // Zesty Americano
@@ -102,30 +102,23 @@
     106: 'snack',    // Snack Platter
   };
   let products = [];
-  let category = 'Semua';
-  let limit = 12;
 
-  function render(focusNew = false) {
-    const previousCount = grid.children.length;
-    const selection = products.filter((item) => category === 'Semua' || item.category === category);
-    // Editorial mode: when category is "Semua" and selection contains the curated editorial ids
+  function render() {
+    // Editorial mode is the only mode now (no category filters).
     const editorialIds = Object.keys(editorialAreas).map(Number);
-    const isEditorial = category === 'Semua' && editorialIds.every((id) => selection.some((item) => item.id === id));
-    grid.classList.toggle('editorial', isEditorial);
+    const displayItems = editorialIds
+      .map((id) => products.find((item) => item.id === id))
+      .filter(Boolean);
+    grid.classList.add('editorial');
     grid.replaceChildren();
-    const displayItems = isEditorial
-      ? editorialIds.map((id) => selection.find((item) => item.id === id)).filter(Boolean)
-      : selection.slice(0, limit);
     displayItems.forEach((item) => {
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'product-card';
       card.dataset.id = item.id;
       card.setAttribute('aria-label', `Perbesar foto: ${item.label}`);
-      if (isEditorial && editorialAreas[item.id]) {
-        card.dataset.area = editorialAreas[item.id];
-        if (item.is_hero) card.dataset.hero = 'true';
-      }
+      card.dataset.area = editorialAreas[item.id];
+      if (item.is_hero) card.dataset.hero = 'true';
       const wrap = document.createElement('span');
       wrap.className = 'img-wrap';
       const photo = document.createElement('img');
@@ -146,33 +139,18 @@
       grid.append(card);
     });
     const shown = displayItems.length;
-    const total = selection.length;
-    status.textContent = isEditorial
-      ? `Editorial layout · ${shown} menu pilihan`
-      : `${Math.min(limit, shown)} dari ${total} foto · ${category}`;
-    more.hidden = all.hidden = isEditorial || shown >= total;
-    filters.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.textContent === category)));
-    if (focusNew) grid.children[previousCount]?.focus({ preventScroll: true });
+    status.textContent = `Editorial layout · ${shown} menu pilihan`;
+    more.hidden = all.hidden = true;
   }
-  more.addEventListener('click', () => { limit += 12; render(true); });
-  all.addEventListener('click', () => { limit = products.length; render(true); });
+  more.addEventListener('click', () => render());
+  all.addEventListener('click', () => render());
   fetch('assets/products/catalog.json')
     .then((response) => {
       if (!response.ok) throw new Error('Catalog unavailable');
       return response.json();
     })
     .then((catalog) => {
-      const priority = (item) => curated.includes(item.id) ? curated.indexOf(item.id) : curated.length;
-      products = catalog.sort((a, b) => priority(a) - priority(b));
-      ['Semua', ...new Set(products.map((item) => item.category))].forEach((name) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = name;
-        button.setAttribute('aria-controls', 'product-grid');
-        button.addEventListener('click', () => { category = name; limit = 12; render(); });
-        filters.append(button);
-      });
-      filters.hidden = false;
+      products = catalog;
       render();
     })
     .catch(() => { status.textContent = 'Foto belum dapat dimuat. Muat ulang halaman atau lihat menu resmi di bawah.'; });
