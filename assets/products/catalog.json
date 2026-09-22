@@ -42,7 +42,7 @@
   {
     "id": 14,
     "category": "Minuman",
-    "label": "Es kopi susu",
+    "label": "Aren Latte",
     "src": "assets/products/product-14.webp",
     "width": 500,
     "height": 500
@@ -98,7 +98,7 @@
   {
     "id": 26,
     "category": "Minuman",
-    "label": "Minuman cokelat dingin",
+    "label": "Chocolate Frambozen",
     "src": "assets/products/product-26.webp",
     "width": 500,
     "height": 500
@@ -106,7 +106,7 @@
   {
     "id": 28,
     "category": "Minuman",
-    "label": "Minuman susu berwarna merah muda",
+    "label": "Soda Gembira",
     "src": "assets/products/product-28.webp",
     "width": 500,
     "height": 500
@@ -274,7 +274,7 @@
   {
     "id": 10,
     "category": "Makanan",
-    "label": "Kentang dan camilan",
+    "label": "Snack Platter",
     "src": "assets/products/product-10.webp",
     "width": 500,
     "height": 500
@@ -290,7 +290,7 @@
   {
     "id": 30,
     "category": "Makanan",
-    "label": "Nasi dan lauk",
+    "label": "beef bulgogi",
     "src": "assets/products/product-30.webp",
     "width": 500,
     "height": 500
@@ -304,17 +304,9 @@
     "height": 500
   },
   {
-    "id": 24,
-    "category": "Pastry & Dessert",
-    "label": "Croissant",
-    "src": "assets/products/product-24.webp",
-    "width": 500,
-    "height": 500
-  },
-  {
     "id": 25,
     "category": "Pastry & Dessert",
-    "label": "Pastry cokelat",
+    "label": "pain au chocolat",
     "src": "assets/products/product-25.webp",
     "width": 500,
     "height": 500
@@ -322,7 +314,7 @@
   {
     "id": 65,
     "category": "Pastry & Dessert",
-    "label": "Pancake dengan saus berry",
+    "label": "Pancake Blueberry cheese",
     "src": "assets/products/product-65.webp",
     "width": 500,
     "height": 500
@@ -338,7 +330,7 @@
   {
     "id": 69,
     "category": "Pastry & Dessert",
-    "label": "Pancake dengan taburan cokelat",
+    "label": "Pancake tiramisu",
     "src": "assets/products/product-69.webp",
     "width": 500,
     "height": 500

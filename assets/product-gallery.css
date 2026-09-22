@@ -9,10 +9,12 @@
 .product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .product-card{min-width:0;padding:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;text-align:left;font:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .product-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(37,39,32,.1)}
-.product-card img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;background:white}
-.product-caption{display:block;padding:16px 18px 20px}
-.product-caption small{display:block;color:var(--rust);font-size:10px;letter-spacing:.09em;margin-bottom:7px}
-.product-caption strong{display:block;font-size:14px;line-height:1.45;font-weight:500}
+.product-card .img-wrap{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1;background:#ffffff;overflow:hidden}
+.product-card .img-wrap img{width:100%;height:100%;object-fit:contain;display:block}
+.product-caption{display:flex;flex-direction:column;gap:6px;padding:16px 18px 20px;min-height:78px}
+.product-caption small{display:block;color:var(--rust);font-size:10px;letter-spacing:.09em;margin:0}
+.product-caption strong{display:block;font-size:15px;line-height:1.35;font-weight:600;margin:0;color:var(--ink)}
+.product-caption .category-eyebrow{order:2}
 .gallery-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:28px}
 #gallery-status{font-size:12px;color:#616458}
 .gallery-actions{display:flex;gap:10px;flex-wrap:wrap}

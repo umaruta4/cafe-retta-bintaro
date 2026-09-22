@@ -88,7 +88,7 @@
   const status = document.querySelector('#gallery-status');
   const more = document.querySelector('#gallery-more');
   const all = document.querySelector('#gallery-all');
-  const curated = [14, 18, 26, 28, 24, 25, 10, 30, 65, 69, 73];
+  const curated = [14, 18, 26, 28, 25, 10, 30, 65, 69, 73];
   let products = [];
   let category = 'Semua';
   let limit = 12;
@@ -103,6 +103,8 @@
       card.className = 'product-card';
       card.dataset.id = item.id;
       card.setAttribute('aria-label', `Perbesar foto: ${item.label}`);
+      const wrap = document.createElement('span');
+      wrap.className = 'img-wrap';
       const photo = document.createElement('img');
       photo.src = item.src;
       photo.alt = item.label;
@@ -110,15 +112,14 @@
       photo.height = item.height;
       photo.loading = 'lazy';
       photo.decoding = 'async';
+      wrap.append(photo);
       const caption = document.createElement('span');
       caption.className = 'product-caption';
-      const tag = document.createElement('small');
-      tag.textContent = item.category;
       const label = document.createElement('strong');
-      label.textContent = `Foto: ${item.label}`;
-      caption.append(tag, label);
-      card.append(photo, caption);
-      card.addEventListener('click', () => openImage(item.src, `Foto: ${item.label}`, card));
+      label.textContent = item.label;
+      caption.append(label);
+      card.append(wrap, caption);
+      card.addEventListener('click', () => openImage(item.src, item.label, card));
       grid.append(card);
     });
     const shown = Math.min(limit, selection.length);
