@@ -14,7 +14,7 @@
 .product-grid.editorial{
   display: grid;
   grid-template-columns: minmax(280px, 1.2fr) 1fr 1fr;
-  grid-template-rows: 380px repeat(4, var(--menu-grid-row));
+  grid-template-rows: 480px repeat(4, var(--menu-grid-row));
   gap: var(--menu-grid-gap);
   grid-template-areas:
     "mont-blue mont-blue mont-blue"
@@ -152,9 +152,8 @@
   line-height: 1;
 }
 
-/* "Seasonal" sticker — rotated badge top-left */
-.product-grid.editorial .product-card[data-seasonal="true"]::before{
-  content: "SEASONAL";
+/* "Seasonal" sticker — rotated badge top-left (rendered as DOM element) */
+.product-grid.editorial .product-card .sticker-seasonal{
   position: absolute;
   top: 24px;
   left: 24px;
@@ -169,6 +168,44 @@
   border-radius: 100px;
   transform: rotate(-6deg);
   box-shadow: 0 6px 18px rgba(0,0,0,.15);
+  text-transform: uppercase;
+}
+
+/* "New" sticker — orange/rust badge, rotated opposite, top-left or stacked with seasonal */
+.product-grid.editorial .product-card .sticker-new{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 5;
+  background: #d2693a;  /* warm rust accent */
+  color: #fffdf8;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  padding: 9px 16px;
+  border-radius: 100px;
+  transform: rotate(-6deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+  text-transform: uppercase;
+}
+/* When BOTH seasonal and new appear on same card, stack new below seasonal */
+.product-grid.editorial .product-card .sticker-seasonal + .sticker-new{
+  top: 72px;
+  transform: rotate(4deg);
+}
+
+/* On small cards (non-Mont-Blue), stickers are smaller and offset less */
+.product-grid.editorial .product-card:not([data-area="mont-blue"]) .sticker-seasonal,
+.product-grid.editorial .product-card:not([data-area="mont-blue"]) .sticker-new{
+  top: 14px;
+  left: 14px;
+  font-size: 9px;
+  padding: 6px 11px;
+  letter-spacing: .14em;
+}
+.product-grid.editorial .product-card:not([data-area="mont-blue"]) .sticker-seasonal + .sticker-new{
+  top: 50px;
 }
 
 /* Decorative blueberry emoji dots */

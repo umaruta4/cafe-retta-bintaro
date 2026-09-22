@@ -432,7 +432,8 @@
     "src": "assets/products/product-110.webp",
     "width": 800,
     "height": 800,
-    "is_seasonal": true
+    "is_seasonal": true,
+    "is_new": true
   },
   {
     "id": 111,
@@ -440,6 +441,7 @@
     "label": "Pan au Chocolat",
     "src": "assets/products/product-111.webp",
     "width": 500,
-    "height": 500
+    "height": 500,
+    "is_new": true
   }
 ]

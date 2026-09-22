@@ -123,6 +123,21 @@
       card.dataset.area = editorialAreas[item.id];
       if (item.is_hero) card.dataset.hero = 'true';
       if (item.is_seasonal) card.dataset.seasonal = 'true';
+      if (item.is_new) card.dataset.new = 'true';
+      // Render sticker elements for seasonal + new items
+      const stickers = [];
+      if (item.is_seasonal) {
+        const s = document.createElement('span');
+        s.className = 'product-sticker sticker-seasonal';
+        s.textContent = 'Seasonal';
+        stickers.push(s);
+      }
+      if (item.is_new) {
+        const s = document.createElement('span');
+        s.className = 'product-sticker sticker-new';
+        s.textContent = 'New';
+        stickers.push(s);
+      }
       const wrap = document.createElement('span');
       wrap.className = 'img-wrap';
       const photo = document.createElement('img');
@@ -139,6 +154,7 @@
       label.textContent = item.label;
       caption.append(label);
       card.append(wrap, caption);
+      stickers.forEach((s) => card.append(s));
       card.addEventListener('click', () => openImage(item.src, item.label, card));
       grid.append(card);
     });
