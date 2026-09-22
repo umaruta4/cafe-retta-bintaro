@@ -157,7 +157,7 @@
       grid.append(card);
     });
     const shown = displayItems.length;
-    status.textContent = `${shown} menu pilihan`;
+    status.textContent = '';
     more.hidden = all.hidden = true;
   }
   more.addEventListener('click', () => render());
