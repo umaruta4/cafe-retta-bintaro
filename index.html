@@ -194,10 +194,15 @@ h2{font-size:clamp(52px,6vw,86px)}
 
 .visit{background:#efe5d3}
 .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.visit-details{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;margin:48px 0}
+.visit-details{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin:48px 0}
 .visit-details>div{padding-top:16px;border-top:1px solid rgba(37,39,32,.2)}
 .visit-details small{font-size:9px;letter-spacing:.18em;font-weight:700;color:var(--rust)}
 .visit-details p{font-size:14px;margin:9px 0 0}
+.visit-note{
+  font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:#4a4f44;
+  background:rgba(47,59,47,.06);border-left:3px solid var(--forest);
+  padding:14px 18px;border-radius:6px;margin:8px 0 28px;line-height:1.5
+}
 .map-card{
   min-height:560px;border-radius:28px;position:relative;overflow:hidden;background:
   linear-gradient(35deg,transparent 47%,rgba(47,59,47,.12) 48%,rgba(47,59,47,.12) 50%,transparent 51%),
@@ -532,7 +537,13 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
               <small>CONTACT</small>
               <p><a href="tel:+6285136908230">+62 851-3690-8230</a></p>
             </div>
+            <div>
+              <small>PARKING</small>
+              <p>Tersedia parkir motor dan mobil di area ruko.</p>
+            </div>
           </div>
+
+          <p class="visit-note reveal">Untuk reservasi group, meeting, atau acara khusus, hubungi kami via WhatsApp untuk konfirmasi ketersediaan meja.</p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Cafe+Retta+Bintaro+Ruko+Regia+Boulevard" target="_blank" rel="noreferrer">Open Google Maps</a>
