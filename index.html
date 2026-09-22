@@ -117,6 +117,16 @@ h1 em,h2 em{font-weight:600;color:var(--forest)}
 .strip{background:var(--forest);color:#f6efe2;padding:17px 0;overflow:hidden}
 .strip-track{display:flex;gap:28px;justify-content:center;align-items:center;white-space:nowrap;font-size:11px;letter-spacing:.22em;font-weight:700}
 .strip i{color:var(--latte);font-style:normal}
+.strip-sparkle{
+  display:inline-block;color:#ffd86b;font-size:18px;
+  text-shadow:0 0 8px rgba(255,216,107,.6);
+  animation:strip-sparkle-pulse 2.4s ease-in-out infinite;
+  vertical-align:middle;line-height:1;
+}
+@keyframes strip-sparkle-pulse{
+  0%,100%{opacity:1;transform:scale(1) rotate(0deg)}
+  50%{opacity:.65;transform:scale(1.15) rotate(20deg)}
+}
 
 .section{padding:120px 0}
 .split{display:grid;grid-template-columns:.82fr 1.18fr;gap:100px}
@@ -358,8 +368,8 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
 
     <section class="strip" aria-label="Cafe highlights">
       <div class="strip-track">
-        <span>COFFEE</span><i>✦</i><span>SNACK</span><i>✦</i><span>WIFI</span><i>✦</i>
-        <span>COWORK</span><i>✦</i><span>TAKEAWAY</span><i>✦</i><span>BINTARO</span><i>✦</i>
+        <span class="strip-sparkle">✦</span><span>COFFEE</span><i>✦</i><span>SNACK</span><i>✦</i>
+        <span>WIFI</span><i>✦</i><span>COWORK</span><i>✦</i><span>TAKEAWAY</span><i>✦</i><span>BINTARO</span><i>✦</i>
       </div>
     </section>
 
@@ -579,10 +589,6 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
         <span><b>CAFE RETTA</b><small>BINTARO</small></span>
       </a>
       <p>Coffee · Snack · Cowork<br>Graha Raya, Bintaro</p>
-      <p class="footer-note">
-        Website concept · 2026<br>
-        Public business information used for demo.
-      </p>
     </div>
   </footer>
 

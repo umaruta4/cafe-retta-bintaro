@@ -54,9 +54,7 @@
     viewer.classList.toggle('is-menu', isMenu);
     toolbar.hidden = !isMenu;
     viewer.querySelector('#viewer-title').textContent = title;
-    viewer.querySelector('#viewer-hint').textContent = isMenu
-      ? 'Perbesar atau pilih Ukuran asli, lalu geser horizontal / vertikal. Keyboard: fokuskan gambar dan gunakan tombol panah.'
-      : 'Deskripsi visual foto, bukan nama resmi produk. Lihat menu resmi untuk nama dan harga.';
+    viewer.querySelector('#viewer-hint').textContent = '';
     image.style.width = '';
     image.alt = title;
     image.src = src;

@@ -19,8 +19,7 @@
       +'    <img src="'+escape(p.cover||'')+'" alt="'+escape(p.cover_alt||p.title)+'" loading="lazy" decoding="async" />'
       +'  </a>'
       +'  <div class="body">'
-      +    '<div class="badge-ig">Promo IG</div>'
-      +    '<h3>'+escape(p.title)+'</h3>'
+      +'    <h3>'+escape(p.title)+'</h3>'
       +    price
       +    (items?'<ul>'+items+'</ul>':'')
       +    (tags?'<div class="tags">'+tags+'</div>':'')
