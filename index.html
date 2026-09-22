@@ -117,16 +117,7 @@ h1 em,h2 em{font-weight:600;color:var(--forest)}
 .strip{background:var(--forest);color:#f6efe2;padding:17px 0;overflow:hidden}
 .strip-track{display:flex;gap:28px;justify-content:center;align-items:center;white-space:nowrap;font-size:11px;letter-spacing:.22em;font-weight:700}
 .strip i{color:var(--latte);font-style:normal}
-.strip-sparkle{
-  display:inline-block;color:#ffd86b;font-size:18px;
-  text-shadow:0 0 8px rgba(255,216,107,.6);
-  animation:strip-sparkle-pulse 2.4s ease-in-out infinite;
-  vertical-align:middle;line-height:1;
-}
-@keyframes strip-sparkle-pulse{
-  0%,100%{opacity:1;transform:scale(1) rotate(0deg)}
-  50%{opacity:.65;transform:scale(1.15) rotate(20deg)}
-}
+.strip-sparkle{display:inline-block;color:var(--latte);font-style:normal}
 
 .section{padding:120px 0}
 .split{display:grid;grid-template-columns:.82fr 1.18fr;gap:100px}
@@ -454,14 +445,12 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
                 <img src="assets/menu/menu-1.jpg" alt="Menu resmi Cafe Retta halaman 1" loading="lazy" decoding="async" />
                 <span>Halaman 01 <span aria-hidden="true">↗</span><small>Ketuk untuk memperbesar</small></span>
               </button>
-              <a href="assets/menu/menu-1.jpg" target="_blank" rel="noopener noreferrer">Buka gambar asli halaman 1 ↗</a>
             </article>
             <article class="menu-page">
               <button class="menu-preview" type="button" data-menu="2" aria-label="Perbesar menu halaman 2">
                 <img src="assets/menu/menu-2.jpg" alt="Menu resmi Cafe Retta halaman 2" loading="lazy" decoding="async" />
                 <span>Halaman 02 <span aria-hidden="true">↗</span><small>Ketuk untuk memperbesar</small></span>
               </button>
-              <a href="assets/menu/menu-2.jpg" target="_blank" rel="noopener noreferrer">Buka gambar asli halaman 2 ↗</a>
             </article>
           </div>
           <p class="gallery-note">Harga dan ketersediaan mengikuti menu terbaru cafe. Silakan konfirmasi saat memesan.</p>

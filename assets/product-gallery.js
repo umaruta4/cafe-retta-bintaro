@@ -15,7 +15,7 @@
         <span id="viewer-scale" role="status"></span>
       </div>
       <div class="viewer-pan" tabindex="0" role="region" aria-label="Gambar; geser untuk melihat detail"><img id="viewer-image" alt="" /></div>
-      <div class="viewer-footer"><p id="viewer-hint"></p><a id="viewer-original" target="_blank" rel="noopener noreferrer">Buka gambar asli ↗</a><a id="viewer-download" download>Unduh gambar</a></div>
+      <div class="viewer-footer"><p id="viewer-hint"></p></div>
     </div>`;
   document.body.append(viewer);
   const image = viewer.querySelector('#viewer-image');

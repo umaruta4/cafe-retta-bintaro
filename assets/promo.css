@@ -18,7 +18,7 @@
 .promo-card .meta-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#777b70;letter-spacing:.04em}
 .promo-card .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .promo-card .actions a{font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.promo-card .badge-ig{position:absolute;top:16px;left:16px;background:rgba(251,247,239,.92);backdrop-filter:blur(8px);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 12px;border-radius:100px;text-transform:uppercase}
+.promo-card .body h3:first-child{margin-top:18px}
 .promo-empty{font-size:14px;color:#66695f}
 .promo-empty a{color:var(--forest);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:860px){
