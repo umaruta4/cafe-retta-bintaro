@@ -260,7 +260,7 @@
 @media (max-width: 540px){
   :root{ --menu-grid-row: 160px; }
   .product-grid.editorial{
-    grid-template-rows: 280px repeat(10, auto);
+    grid-template-rows: 280px repeat(11, auto);
     grid-template-columns: 1fr;
     grid-template-areas:
       "mont-blue"
@@ -272,7 +272,8 @@
       "hero-b"
       "roasted"
       "snack"
-      "pain";
+      "pain"
+      "berry";
   }
   .product-grid.editorial .product-card{ aspect-ratio: 4/3; }
   .product-grid.editorial .product-card[data-area="mont-blue"]{ aspect-ratio: 16/9; }
