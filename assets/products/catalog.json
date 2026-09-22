@@ -441,7 +441,6 @@
     "label": "Pan au Chocolat",
     "src": "assets/products/product-111.webp",
     "width": 500,
-    "height": 500,
-    "is_new": true
+    "height": 500
   }
 ]
