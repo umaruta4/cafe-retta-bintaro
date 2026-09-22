@@ -1,0 +1,154 @@
+/* Editorial mood-board layout for menu showcase */
+:root{
+  --menu-grid-gap: 14px;
+  --menu-grid-row: 220px;
+}
+
+.product-grid.editorial{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, var(--menu-grid-row));
+  gap: var(--menu-grid-gap);
+  grid-template-areas:
+    "hero-a  lychee   avocado  ."
+    "hero-a  zesty    lemon    roti"
+    "berry   hero-b   hero-b   snack"
+    "berry   hero-b   hero-b   snack";
+}
+
+.product-grid.editorial .product-card{aspect-ratio: auto;}
+
+.product-grid.editorial .product-card[data-area="hero-a"]{
+  grid-area: hero-a;
+  /* fill grid cells — don't force aspect-ratio */
+}
+.product-grid.editorial .product-card[data-area="hero-b"]{
+  grid-area: hero-b;
+}
+.product-grid.editorial .product-card[data-area="berry"]   { grid-area: berry; }
+.product-grid.editorial .product-card[data-area="lychee"] { grid-area: lychee; }
+.product-grid.editorial .product-card[data-area="avocado"]{ grid-area: avocado; }
+.product-grid.editorial .product-card[data-area="roasted"]{ grid-area: roti; }
+.product-grid.editorial .product-card[data-area="zesty"]  { grid-area: zesty; }
+.product-grid.editorial .product-card[data-area="lemon"]  { grid-area: lemon; }
+.product-grid.editorial .product-card[data-area="snack"]  { grid-area: snack; }
+
+/* Hero styling — bigger typography, overlay caption */
+.product-grid.editorial .product-card[data-hero="true"] .product-caption{
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(transparent, rgba(20, 16, 10, 0.85));
+  padding: 20px 22px 22px;
+  min-height: 0;
+}
+.product-grid.editorial .product-card[data-hero="true"]{
+  position: relative;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(37,39,32,.18);
+}
+.product-grid.editorial .product-card[data-hero="true"]::before{
+  content: "Favorit";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: rgba(251,247,239,.92);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+.product-grid.editorial .product-card[data-hero="true"] .product-caption strong{
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #fffdf8;
+  letter-spacing: -.01em;
+}
+
+/* Section divider styling */
+.section-divider{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 36px 0 20px;
+}
+.section-divider::before,
+.section-divider::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(37,39,32,.18);
+}
+.section-divider span{
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: .24em;
+  font-weight: 700;
+  color: var(--rust);
+  text-transform: uppercase;
+}
+
+/* Responsive: collapse editorial to simple grid on mobile */
+@media (max-width: 900px){
+  :root{ --menu-grid-row: 180px; }
+  .product-grid.editorial{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "hero-a  hero-a"
+      "lychee  avocado"
+      "zesty   lemon"
+      "berry   hero-b"
+      "roasted snack";
+  }
+  .product-grid.editorial .product-card[data-area="hero-a"]{aspect-ratio: 16/9;}
+  .product-grid.editorial .product-card[data-area="hero-b"]{aspect-ratio: 16/9;}
+  .product-grid.editorial .product-card[data-hero="true"] .product-caption strong{font-size: 20px;}
+}
+
+@media (max-width: 540px){
+  :root{ --menu-grid-row: 150px; }
+  .product-grid.editorial{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero-a"
+      "lychee"
+      "avocado"
+      "zesty"
+      "lemon"
+      "roasted"
+      "berry"
+      "hero-b"
+      "snack";
+  }
+  .product-grid.editorial .product-card[data-area="hero-a"],
+  .product-grid.editorial .product-card[data-area="hero-b"]{aspect-ratio: 16/9;}
+  .product-grid.editorial .product-card{min-height: 220px;}
+}
+
+/* Section heading */
+.editorial-section-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin: 60px 0 24px;
+}
+.editorial-section-head h3{
+  font-family: "Playfair Display", serif;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--ink);
+}
+.editorial-section-head p{
+  font-size: 13px;
+  color: #616458;
+  max-width: 380px;
+  margin: 0;
+}

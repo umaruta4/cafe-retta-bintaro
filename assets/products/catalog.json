@@ -350,5 +350,79 @@
     "src": "assets/products/product-73.webp",
     "width": 500,
     "height": 500
+  },
+  {
+    "id": 101,
+    "category": "Minuman",
+    "label": "Lychee Tea",
+    "src": "assets/products/product-101.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 102,
+    "category": "Minuman",
+    "label": "Americano",
+    "src": "assets/products/product-102.webp",
+    "width": 500,
+    "height": 500,
+    "is_hero": true
+  },
+  {
+    "id": 103,
+    "category": "Pastry & Dessert",
+    "label": "Pancake Berry Cheese",
+    "src": "assets/products/product-103.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 104,
+    "category": "Pastry & Dessert",
+    "label": "Pancake Special",
+    "src": "assets/products/product-104.webp",
+    "width": 500,
+    "height": 500,
+    "is_hero": true
+  },
+  {
+    "id": 105,
+    "category": "Makanan",
+    "label": "Roti Bakar Choco Cheese",
+    "src": "assets/products/product-105.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 106,
+    "category": "Makanan",
+    "label": "Snack Platter",
+    "src": "assets/products/product-106.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 107,
+    "category": "Minuman",
+    "label": "Avocado Latte",
+    "src": "assets/products/product-107.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 108,
+    "category": "Minuman",
+    "label": "Zesty Americano",
+    "src": "assets/products/product-108.webp",
+    "width": 500,
+    "height": 500
+  },
+  {
+    "id": 109,
+    "category": "Minuman",
+    "label": "Lemon Tea",
+    "src": "assets/products/product-109.webp",
+    "width": 500,
+    "height": 500
   }
 ]

@@ -89,6 +89,18 @@
   const more = document.querySelector('#gallery-more');
   const all = document.querySelector('#gallery-all');
   const curated = [14, 18, 26, 28, 25, 10, 30, 65, 69, 73];
+  // Editorial mood-board area mapping (id → grid area name)
+  const editorialAreas = {
+    102: 'hero-a',   // Americano (HERO 1)
+    104: 'hero-b',   // Pancake Special (HERO 2)
+    103: 'berry',    // Pancake Berry Cheese
+    101: 'lychee',   // Lychee Tea
+    107: 'avocado',  // Avocado Latte
+    108: 'zesty',    // Zesty Americano
+    109: 'lemon',    // Lemon Tea
+    105: 'roasted',  // Roti Bakar Choco Cheese
+    106: 'snack',    // Snack Platter
+  };
   let products = [];
   let category = 'Semua';
   let limit = 12;
@@ -96,13 +108,24 @@
   function render(focusNew = false) {
     const previousCount = grid.children.length;
     const selection = products.filter((item) => category === 'Semua' || item.category === category);
+    // Editorial mode: when category is "Semua" and selection contains the curated editorial ids
+    const editorialIds = Object.keys(editorialAreas).map(Number);
+    const isEditorial = category === 'Semua' && editorialIds.every((id) => selection.some((item) => item.id === id));
+    grid.classList.toggle('editorial', isEditorial);
     grid.replaceChildren();
-    selection.slice(0, limit).forEach((item) => {
+    const displayItems = isEditorial
+      ? editorialIds.map((id) => selection.find((item) => item.id === id)).filter(Boolean)
+      : selection.slice(0, limit);
+    displayItems.forEach((item) => {
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'product-card';
       card.dataset.id = item.id;
       card.setAttribute('aria-label', `Perbesar foto: ${item.label}`);
+      if (isEditorial && editorialAreas[item.id]) {
+        card.dataset.area = editorialAreas[item.id];
+        if (item.is_hero) card.dataset.hero = 'true';
+      }
       const wrap = document.createElement('span');
       wrap.className = 'img-wrap';
       const photo = document.createElement('img');
@@ -122,9 +145,12 @@
       card.addEventListener('click', () => openImage(item.src, item.label, card));
       grid.append(card);
     });
-    const shown = Math.min(limit, selection.length);
-    status.textContent = `${shown} dari ${selection.length} foto · ${category}`;
-    more.hidden = all.hidden = shown >= selection.length;
+    const shown = displayItems.length;
+    const total = selection.length;
+    status.textContent = isEditorial
+      ? `Editorial layout · ${shown} menu pilihan`
+      : `${Math.min(limit, shown)} dari ${total} foto · ${category}`;
+    more.hidden = all.hidden = isEditorial || shown >= total;
     filters.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(button.textContent === category)));
     if (focusNew) grid.children[previousCount]?.focus({ preventScroll: true });
   }
