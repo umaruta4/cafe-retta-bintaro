@@ -89,17 +89,20 @@
   const all = document.querySelector('#gallery-all');
 
   // Editorial mood-board area mapping (id → grid area name)
-  // 3-column magazine layout: 2 tall heroes in column 1, mediums in cols 2-3.
+  // 11 cards total: Mont Blue (seasonal full-width top), Americano + Pancake Special (stacked tall col 1),
+  // Pan au Chocolat + Pancake Berry Cheese (col 2 bottom rows), and 7 medium cards.
   const editorialAreas = {
-    102: 'hero-a',   // Americano (HERO 1, tall, top-left)
-    104: 'hero-b',   // Pancake Special (HERO 2, tall, bottom-middle)
-    103: 'berry',    // Pancake Berry Cheese (tall, bottom-left)
-    101: 'lychee',   // Lychee Tea
-    107: 'avocado',  // Avocado Latte
-    108: 'zesty',    // Zesty Americano
-    109: 'lemon',    // Lemon Tea
-    105: 'roasted',  // Roti Bakar Choco Cheese
-    106: 'snack',    // Snack Platter
+    110: 'mont-blue',     // Mont Blue (SEASONAL, full-width top row)
+    102: 'hero-a',        // Americano (HERO 1, tall, top-left col 1)
+    104: 'hero-b',        // Pancake Special (HERO 2, tall, bottom-left col 1)
+    101: 'lychee',        // Lychee Tea
+    107: 'avocado',       // Avocado Latte
+    108: 'zesty',         // Zesty Americano
+    109: 'lemon',         // Lemon Tea
+    105: 'roasted',       // Roti Bakar Choco Cheese
+    106: 'snack',         // Snack Platter
+    111: 'pain',          // Pan au Chocolat
+    103: 'berry',         // Pancake Berry Cheese
   };
   let products = [];
 
@@ -119,6 +122,7 @@
       card.setAttribute('aria-label', `Perbesar foto: ${item.label}`);
       card.dataset.area = editorialAreas[item.id];
       if (item.is_hero) card.dataset.hero = 'true';
+      if (item.is_seasonal) card.dataset.seasonal = 'true';
       const wrap = document.createElement('span');
       wrap.className = 'img-wrap';
       const photo = document.createElement('img');

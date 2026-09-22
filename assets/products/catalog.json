@@ -424,5 +424,22 @@
     "src": "assets/products/product-109.webp",
     "width": 500,
     "height": 500
+  },
+  {
+    "id": 110,
+    "category": "Minuman",
+    "label": "Mont Blue",
+    "src": "assets/products/product-110.webp",
+    "width": 800,
+    "height": 800,
+    "is_seasonal": true
+  },
+  {
+    "id": 111,
+    "category": "Pastry & Dessert",
+    "label": "Pan au Chocolat",
+    "src": "assets/products/product-111.webp",
+    "width": 500,
+    "height": 500
   }
 ]

@@ -1,102 +1,30 @@
 /* Editorial mood-board layout for menu showcase
-   Mockup: 3-col grid where Americano + Pancake Special stack vertically in col 1 (rows 1-2 and 3-4),
-   and Pancake Special is wide spanning cols 1-2. 6 small cards fill remaining cells.
-
-   Row 1: [Americano tall TOP    ] [Lychee Tea        ] [Avocado Latte   ]
-   Row 2: [Americano tall BOT    ] [Zesty Americano   ] [Lemon Tea       ]
-   Row 3: [Pancake Sp. wide LEFT ] [Pancake Sp. right ] [Roti Bakar Choco]
-   Row 4: [Pancake Sp. wide LEFT ] [Pancake Sp. right ] [Snack Platter   ]
-
-   Wait — Pancake Special wide in row 3-4 means cols 1-2 span, NOT col 1 only.
-   Re-examining mockup:
-   - Americano is TALL on left, spans rows 1-2 col 1
-   - Below Americano (col 1 rows 3-4): Pancake Berry Cheese (medium-tall? actually fits just 2 rows medium)
-   Actually mockup shows: Americano top-left tall (2 rows × 1 col), Pancake Special bottom-middle wide (2 rows × 2 cols)
-   And the small cards fill remaining cells.
-
-   Final layout (4 rows × 3 cols):
-   Row 1: [Americano tall       ] [Lychee  ] [Avocado]
-   Row 2: [Americano tall       ] [Zesty   ] [Lemon  ]
-   Row 3: [Berry Cheese         ] [Pancake Special wide] [Pancake Sp.]
-   Row 4: [Berry Cheese         ] [Pancake Special wide] [Pancake Sp.]
-   Wait mockup shows Pancake Special WIDE = 2 cols, so:
-   Row 3: [Berry   ] [Pancake S. 2cols ] [snack  ]
-   Row 4: [Berry   ] [Pancake S. 2cols ] [roti   ]
-
-   Actually user said: "americano dan pancake special posisinya atas bawah saja"
-   So they're STACKED top-bottom in col 1. Hero-a=Americano rows 1-2 col 1, hero-b=Pancake Special rows 3-4 col 1.
-   The 6 medium cards fill cols 2-3 across rows 1-3 (3 rows × 2 cols = 6 slots).
-
-   Row 1: [Americano tall (2 rows)] [Lychee  ] [Avocado]
-   Row 2: [Americano tall         ] [Zesty   ] [Lemon  ]
-   Row 3: [Pancake Special tall   ] [Roti    ] [Snack  ]
-   Row 4: [Pancake Special tall   ] [empty   ] [empty  ]
-
-   That's 4 rows but row 4 cols 2-3 are empty. Not great.
-   OR: pancake special spans col 1-2 in rows 3-4:
-   Row 3: [Pancake Special wide (cols 1-2)] [Roti]  [Snack]
-   Row 4: [Pancake Special wide          ] [empty] [empty]
-   Still empty cells.
-
-   Best: pancake special tall col 1, small cards fill col 2-3 rows 1-3, then row 4 col 2-3 = more small cards or empty.
-   Mockup shows 6 small cards total + 2 heroes. With Americano tall (2 rows × 1 col) and Pancake Special tall (2 rows × 1 col),
-   the 6 smalls need 6 cells = 2 cols × 3 rows. Plus the 2 hero slots = 2 cols × 4 rows total... but hero slots are 2 rows each so:
-
-   Total cells in 3 cols × 4 rows = 12. American tall = 2 cells, Pancake tall = 2 cells, 6 smalls = 6 cells. Total = 10. 2 cells empty.
-
-   Solution: stretch one of the small cards? Or use a 3-col × 3-row grid where Americano = 1 col × 2 rows, Pancake Special = 2 cols × 1 row.
-   Row 1: [Americano tall ] [Lychee] [Avocado]
-   Row 2: [Americano tall ] [Zesty ] [Lemon  ]
-   Row 3: [Pancake Special WIDE (cols 1-2)] [Roti ]  <- but then 1 cell empty in row 3 col 3
-   Actually:
-   Row 3: [Pancake Special WIDE (cols 1-2)] [Roti Bakar]
-                                        [Snack Platter] <- but that's 2 rows for col 3
-   Better: 4 rows × 3 cols, Americano tall (rows 1-2 col 1), Pancake Special wide (rows 3-4 cols 1-2),
-   6 smalls in 2x3 grid (cols 2-3 rows 1-3) + Roti/Snack stacked in col 3 rows 3-4... wait that's 7 smalls.
-
-   Let me just count what's needed: 2 hero slots + 6 small slots = 8 cards total. User said 9 (9 menus).
-   But user said Pancake Special is wide hero (cols 1-2 in row 3 or similar) and Americano is tall (col 1 rows 1-2).
-   6 other cards are small (Lychee, Avocado, Zesty, Lemon, Roti Bakar, Snack Platter).
-   That's 6 smalls + 1 tall (Americano 2 cells) + 1 wide (Pancake Special 2 cells) = 10 cells. Grid 3x4 = 12 cells, 2 empty.
-
-   Layout:
-   Row 1: [Americano tall (rows 1-2 col 1)] [Lychee  ] [Avocado]
-   Row 2: [Americano tall               ] [Zesty   ] [Lemon  ]
-   Row 3: [Pancake Special wide (cols 1-2)] [Roti   ] [Snack]
-   Row 4: [Pancake Special wide         ] [empty ] [empty]
-
-   Hmm still 2 empty. Alternative: Pancake Special spans rows 3-4 col 1-2, Roti/Snack span col 3 rows 3-4 (each takes 1 row):
-   Row 3: [Pancake Special wide cols 1-2] [Roti    ]
-   Row 4: [Pancake Special wide cols 1-2] [Snack   ]
-   That's clean! 6 smalls in 2x3 grid... wait but Roti and Snack are in col 3 (not 2-3).
-   Re-doing:
-   Row 1: [Americano tall col 1] [Lychee col 2] [Avocado col 3]
-   Row 2: [Americano tall      ] [Zesty       ] [Lemon       ]
-   Row 3: [Pancake Special cols 1-2]           [Roti col 3 ]
-   Row 4: [Pancake Special cols 1-2]           [Snack col 3]
-
-   That's 8 cards, 12-8=4 cells. Wait count: Americano 2 cells + 4 smalls in col 2-3 rows 1-2 (4 cells) + Pancake Special wide 2 cells + 2 smalls in col 3 rows 3-4 (2 cells) = 10 cells. 2 empty in row 3-4 col 1-2 if Pancake Special is wide spanning rows 3-4 col 1-2? No it FILLs those 4 cells.
-
-   Re-count: Americano = 2 cells (col 1 rows 1-2). Small 1 (Lychee) = 1 cell. Small 2 (Avocado) = 1 cell. Small 3 (Zesty) = 1 cell. Small 4 (Lemon) = 1 cell. Pancake Special = 4 cells (cols 1-2 rows 3-4). Small 5 (Roti) = 1 cell. Small 6 (Snack) = 1 cell. Total = 12 cells. Perfect fit!
+   Mockup (11 cards, 1 seasonal):
+   Row 1: Mont Blue full-width (SEASONAL sticker)
+   Row 2: Americano tall + Lychee + Avocado
+   Row 3: Americano tall + Zesty + Lemon
+   Row 4: Pancake Special tall + Roti + Snack
+   Row 5: Pancake Special tall + Pan au Chocolat + (empty)
 */
 :root{
   --menu-grid-gap: 14px;
-  --menu-grid-row: 220px;
+  --menu-grid-row: 200px;
 }
 
 .product-grid.editorial{
   display: grid;
   grid-template-columns: minmax(280px, 1.2fr) 1fr 1fr;
-  grid-template-rows: repeat(4, var(--menu-grid-row));
+  grid-template-rows: 380px repeat(4, var(--menu-grid-row));
   gap: var(--menu-grid-gap);
   grid-template-areas:
-    "hero-a lychee  avocado"
-    "hero-a zesty   lemon"
-    "hero-b roti    snack"
-    "hero-b berry   .";
+    "mont-blue mont-blue mont-blue"
+    "hero-a    lychee     avocado"
+    "hero-a    zesty      lemon"
+    "hero-b    roti       snack"
+    "hero-b    pain       berry";
 }
 
-/* All cards use the AMERICANO style: photo full-cover + overlay caption */
+/* ==== BASE CARD STYLE (Americano format: photo full-cover + caption overlay) ==== */
 .product-grid.editorial .product-card{
   aspect-ratio: auto;
   padding: 0;
@@ -125,7 +53,6 @@
   display: block;
 }
 
-/* Caption = overlay on top of photo (bottom-left) */
 .product-grid.editorial .product-card .product-caption{
   position: absolute;
   inset: auto 0 0 0;
@@ -151,7 +78,7 @@
   display: block;
 }
 
-/* HERO (Americano + Pancake Special): bigger typography, softer caption position */
+/* ==== HEROES (Americano + Pancake Special) ==== */
 .product-grid.editorial .product-card[data-hero="true"] .product-caption{
   padding: 28px 30px 30px;
 }
@@ -160,7 +87,6 @@
   font-weight: 700;
 }
 
-/* "Favorit" badge on heroes only */
 .product-grid.editorial .product-card[data-hero="true"]::before{
   content: "Favorit";
   position: absolute;
@@ -179,40 +105,128 @@
   border-radius: 100px;
 }
 
-.product-grid.editorial .product-card[data-area="hero-a"] { grid-area: hero-a; }
-.product-grid.editorial .product-card[data-area="hero-b"] { grid-area: hero-b; }
-.product-grid.editorial .product-card[data-area="lychee"] { grid-area: lychee; }
-.product-grid.editorial .product-card[data-area="avocado"] { grid-area: avocado; }
-.product-grid.editorial .product-card[data-area="zesty"] { grid-area: zesty; }
-.product-grid.editorial .product-card[data-area="lemon"] { grid-area: lemon; }
-.product-grid.editorial .product-card[data-area="roasted"] { grid-area: roti; }
-.product-grid.editorial .product-card[data-area="snack"] { grid-area: snack; }
-
-/* Responsive: collapse editorial to simple grid on tablet */
-@media (max-width: 900px){
-  :root{ --menu-grid-row: 200px; }
-  .product-grid.editorial{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-      "hero-a  hero-a"
-      "lychee  avocado"
-      "zesty   lemon"
-      "hero-b  hero-b"
-      "roasted snack";
-  }
-  .product-grid.editorial .product-card{ aspect-ratio: 16/10; }
-  .product-grid.editorial .product-card[data-area="hero-a"],
-  .product-grid.editorial .product-card[data-area="hero-b"]{ aspect-ratio: 16/9; }
-  .product-grid.editorial .product-card[data-hero="true"] .product-caption strong{ font-size: 22px; }
+/* ==== MONT BLUE (Seasonal, full-width top) ==== */
+.product-grid.editorial .product-card[data-area="mont-blue"]{
+  border-radius: 22px;
+  background: #fbf7ef;  /* cream — letterbox for portrait Mont Blue */
+}
+.product-grid.editorial .product-card[data-area="mont-blue"] .img-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  padding: 24px 60px;  /* room for caption on right + sticker on left */
+}
+.product-grid.editorial .product-card[data-area="mont-blue"] .img-wrap img{
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;  /* PRESERVE aspect ratio — no gepeng */
+  display: block;
+  margin: 0 auto;
+}
+.product-grid.editorial .product-card[data-area="mont-blue"] .product-caption{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: auto;
+  inset: auto 0 auto auto;
+  background: none;
+  padding: 24px 32px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.product-grid.editorial .product-card[data-area="mont-blue"] .product-caption strong{
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #2a2620;
+  text-shadow: none;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
-/* Responsive: phone — single column stack */
-@media (max-width: 540px){
+/* "Seasonal" sticker — rotated badge top-left */
+.product-grid.editorial .product-card[data-seasonal="true"]::before{
+  content: "SEASONAL";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 4;
+  background: #2a2620;
+  color: #fbf7ef;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  padding: 9px 16px;
+  border-radius: 100px;
+  transform: rotate(-6deg);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+/* Decorative blueberry emoji dots */
+.product-grid.editorial .product-card[data-area="mont-blue"]::after{
+  content: "✦ ✦ ✦";
+  position: absolute;
+  bottom: 22px;
+  left: 28px;
+  z-index: 2;
+  color: #5d4a8c;
+  font-size: 14px;
+  letter-spacing: .35em;
+  opacity: .55;
+}
+
+/* ==== GRID AREA ASSIGNMENTS ==== */
+.product-grid.editorial .product-card[data-area="hero-a"]   { grid-area: hero-a; }
+.product-grid.editorial .product-card[data-area="hero-b"]   { grid-area: hero-b; }
+.product-grid.editorial .product-card[data-area="mont-blue"]{ grid-area: mont-blue; }
+.product-grid.editorial .product-card[data-area="lychee"]  { grid-area: lychee; }
+.product-grid.editorial .product-card[data-area="avocado"] { grid-area: avocado; }
+.product-grid.editorial .product-card[data-area="zesty"]   { grid-area: zesty; }
+.product-grid.editorial .product-card[data-area="lemon"]   { grid-area: lemon; }
+.product-grid.editorial .product-card[data-area="roasted"] { grid-area: roti; }
+.product-grid.editorial .product-card[data-area="snack"]   { grid-area: snack; }
+.product-grid.editorial .product-card[data-area="pain"]    { grid-area: pain; }
+
+/* ==== RESPONSIVE: tablet — collapse to 2-col ==== */
+@media (max-width: 900px){
   :root{ --menu-grid-row: 180px; }
   .product-grid.editorial{
+    grid-template-rows: 240px repeat(5, 180px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "mont-blue mont-blue"
+      "hero-a    hero-a"
+      "lychee    avocado"
+      "zesty     lemon"
+      "hero-b    hero-b"
+      "roasted   snack"
+      "pain      pain";
+  }
+  .product-grid.editorial .product-card[data-area="mont-blue"],
+  .product-grid.editorial .product-card[data-area="hero-a"],
+  .product-grid.editorial .product-card[data-area="hero-b"],
+  .product-grid.editorial .product-card[data-area="pain"]{ aspect-ratio: 16/9; }
+  .product-grid.editorial .product-card[data-hero="true"] .product-caption strong{ font-size: 22px; }
+  .product-grid.editorial .product-card[data-area="mont-blue"] .product-caption strong{ font-size: 36px; }
+}
+
+/* ==== RESPONSIVE: phone — single column ==== */
+@media (max-width: 540px){
+  :root{ --menu-grid-row: 160px; }
+  .product-grid.editorial{
+    grid-template-rows: 280px repeat(10, auto);
     grid-template-columns: 1fr;
     grid-template-areas:
+      "mont-blue"
       "hero-a"
       "lychee"
       "avocado"
@@ -220,11 +234,14 @@
       "lemon"
       "hero-b"
       "roasted"
-      "snack";
+      "snack"
+      "pain";
   }
   .product-grid.editorial .product-card{ aspect-ratio: 4/3; }
+  .product-grid.editorial .product-card[data-area="mont-blue"]{ aspect-ratio: 16/9; }
   .product-grid.editorial .product-card[data-area="hero-a"],
   .product-grid.editorial .product-card[data-area="hero-b"]{ aspect-ratio: 16/9; }
+  .product-grid.editorial .product-card[data-area="mont-blue"] .product-caption strong{ font-size: 32px; }
 }
 
 /* Section heading */
