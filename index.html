@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Cafe Retta Bintaro — coffee, brunch, and a cozy coworking space in Graha Raya Bintaro." />
+  <meta name="description" content="Cafe Retta Bintaro — coffee, snacks, and a cozy coworking space in Graha Raya Bintaro." />
   <meta name="theme-color" content="#2f3b2f" />
   <title>Cafe Retta Bintaro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,9 +140,25 @@ h2{font-size:clamp(52px,6vw,86px)}
 .menu-card h3{font-family:"Playfair Display",serif;font-size:28px;line-height:1.05;margin:8px 0 12px}
 .menu-card p{font-size:13px;color:#6d7067;margin:0}
 .menu-cta{
-  display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px
+  display:flex;flex-direction:column;gap:18px;padding-top:24px;font-size:13px
 }
-.menu-cta a{font-weight:700;border-bottom:1px solid var(--ink)}
+.menu-cta>p{margin:0;color:#3b3f36}
+.order-channels{display:flex;flex-wrap:wrap;gap:12px}
+.order-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 20px;border-radius:100px;
+  font-family:inherit;font-weight:700;font-size:14px;
+  text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
+  border:1.5px solid currentColor
+}
+.order-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.order-gofood{background:#fff;color:#ee2737;border-color:#ee2737}
+.order-gofood:hover{background:#ee2737;color:#fff}
+.order-grabfood{background:#fff;color:#00b14f;border-color:#00b14f}
+.order-grabfood:hover{background:#00b14f;color:#fff}
+.order-label{font-weight:500;opacity:.75;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.order-brand{font-size:16px;font-weight:800}
+.order-arrow{font-size:14px;margin-left:2px}
 
 .space-section{background:var(--paper)}
 .space-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:55px}
@@ -287,7 +303,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
       <div class="hero-glow"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">COFFEE · BRUNCH · COWORK</p>
+          <p class="eyebrow">COFFEE · SNACK · COWORK</p>
           <h1>A cozy corner<br><em>to slow down.</em></h1>
           <p class="hero-lead">
             Mulai pagi dengan kopi, lanjutkan hari dengan makanan yang comforting,
@@ -325,7 +341,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
 
     <section class="strip" aria-label="Cafe highlights">
       <div class="strip-track">
-        <span>COFFEE</span><i>✦</i><span>BRUNCH</span><i>✦</i><span>WIFI</span><i>✦</i>
+        <span>COFFEE</span><i>✦</i><span>SNACK</span><i>✦</i><span>WIFI</span><i>✦</i>
         <span>COWORK</span><i>✦</i><span>TAKEAWAY</span><i>✦</i><span>BINTARO</span><i>✦</i>
       </div>
     </section>
@@ -350,7 +366,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
             <article>
               <span>02</span>
               <h3>Work-friendly</h3>
-              <p>Wi-Fi tersedia dan konsep tempatnya juga dikenal sebagai coworking space.</p>
+              <p>Wi-Fi tersedia, colokan di setiap meja, dan konsep tempatnya juga dikenal sebagai coworking space.</p>
             </article>
             <article>
               <span>03</span>
@@ -372,7 +388,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
         <div class="promo-head reveal">
           <p class="eyebrow">PROMO CAFE RETTA</p>
           <h2 id="promo-title">Sedang berlangsung<br>di Retta.</h2>
-          <p>Promo yang sedang aktif selama September 2026. Update berikutnya tinggal edit satu file.</p>
+          <p>Promo yang sedang aktif saat ini.</p>
         </div>
         <div id="promo-list" class="promo-grid" aria-live="polite"></div>
         <p id="promo-empty" class="promo-empty" hidden>Saat ini belum ada promo aktif. Cek Instagram <a href="https://www.instagram.com/caferetta.bintaro/" target="_blank" rel="noopener noreferrer">@caferetta.bintaro</a> untuk update terbaru.</p>
@@ -386,7 +402,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
             <p class="eyebrow">DARI DAPUR & COFFEE BAR RETTA</p>
             <h2>Comfort in<br>every order.</h2>
           </div>
-          <p>Sajian pilihan tim barista & chef Retta. Klik foto untuk melihat lebih dekat. Menu lengkap & harga bisa dilihat di <a class="gallery-text-link" href="#official-menu">brosur resmi ↓</a>.</p>
+          <p>Sajian pilihan tim Retta. Klik foto untuk melihat lebih dekat.</p>
         </div>
 
         <p class="gallery-note">Favorit tim Retta: <b>Americano</b> & <b>Pancake Special</b> — dibuat fresh setiap hari.</p>
@@ -426,9 +442,18 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
 
         <div class="menu-cta reveal">
           <p>Sudah menemukan pilihanmu? Pesan melalui kanal resmi Retta.</p>
-          <a href="https://gofood.co.id/jakarta/restaurant/23ae241b-4d66-434b-83f7-0f6761619b83?as=gmaps" target="_blank" rel="noreferrer">
-            Order via GoFood ↗
-          </a>
+          <div class="order-channels">
+            <a class="order-btn order-gofood" href="https://gofood.co.id/jakarta/restaurant/23ae241b-4d66-434b-83f7-0f6761619b83?as=gmaps" target="_blank" rel="noreferrer">
+              <span class="order-label">Order via</span>
+              <span class="order-brand">GoFood</span>
+              <span class="order-arrow">↗</span>
+            </a>
+            <a class="order-btn order-grabfood" href="https://food.grab.com/id/id/?search=Cafe%20Retta%20Bintaro" target="_blank" rel="noreferrer">
+              <span class="order-label">Order via</span>
+              <span class="order-brand">GrabFood</span>
+              <span class="order-arrow">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -517,7 +542,7 @@ footer p{font-size:12px;color:#b8bdb1;margin:0}
         <img class="brand-mark" src="assets/images/retta-logo.webp" alt="Logo Cafe Retta" width="42" height="42" />
         <span><b>CAFE RETTA</b><small>BINTARO</small></span>
       </a>
-      <p>Coffee · Brunch · Cowork<br>Graha Raya, Bintaro</p>
+      <p>Coffee · Snack · Cowork<br>Graha Raya, Bintaro</p>
       <p class="footer-note">
         Website concept · 2026<br>
         Public business information used for demo.

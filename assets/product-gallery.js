@@ -159,7 +159,7 @@
       grid.append(card);
     });
     const shown = displayItems.length;
-    status.textContent = `Editorial layout · ${shown} menu pilihan`;
+    status.textContent = `${shown} menu pilihan`;
     more.hidden = all.hidden = true;
   }
   more.addEventListener('click', () => render());
